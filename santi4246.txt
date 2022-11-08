@@ -1,8 +1,0 @@
-tengo terminado de feature(rama individual):
-
--head en dev
--pull dev (actualizar dev local)
--head en feature
--merge con dev
--push origin feature
--hacer pull request en gitHub.com
