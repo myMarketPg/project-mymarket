@@ -20,7 +20,7 @@ module.exports = (sequelize) => {
     },
     stock: {
         type: DataTypes.INTEGER,
-        allowNull: true
+        allowNull: false
     },
     category: {
         type: DataTypes.STRING,
@@ -29,6 +29,10 @@ module.exports = (sequelize) => {
     image: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    rating: {
+      type: Datatypes.ENUM('1', '2', '3', '4', '5'),
+      allowNull: false
     },
   });
 };
