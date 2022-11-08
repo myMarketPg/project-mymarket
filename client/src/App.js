@@ -1,15 +1,15 @@
 import "./App.css";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 
-import { Home } from "./Components/Home/Home";
+import Home from "./Components/Home/Home";
 
 function App(props) {
     return (
-        <div>
-            <Switch>
+        <BrowserRouter>
+            <div>
                 <Route path="/" exact render={() => <Home />} />
-            </Switch>
-        </div>
+            </div>
+        </BrowserRouter>
     );
 }
 
