@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
     return (
         <footer>
+            <h2 className="footerTitle">Hola</h2>
             <div className="social">
                 <a href="https://www.instagram.com">
                     <i className="icon ion-social-instagram"></i>
