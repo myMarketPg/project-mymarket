@@ -5,7 +5,7 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('product', {
     id: {
-        type: DataTypes.UUID,
+        type: DataTypes.STRING,
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
         allowNull: false,
@@ -30,8 +30,8 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false
     },
-    rating: {
-      type: DataTypes.ENUM('1', '2', '3', '4', '5'),
+    rating: {      
+      type: DataTypes.ENUM ('1', '2', '3', '4', '5'),
       allowNull: false
     },
     description: {
