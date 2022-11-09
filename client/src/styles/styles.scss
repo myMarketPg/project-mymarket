@@ -1,0 +1,10 @@
+//En este archivo solo importamos archivos .scss
+
+
+//importo estilos base index
+@import './base/settings';
+
+//components (esta bien que no aparezca el _)
+@import './Components/Home';
+@import './Components/NavBar';
+@import './Components/Footer';

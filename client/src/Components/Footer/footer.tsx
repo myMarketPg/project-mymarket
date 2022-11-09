@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import React from "react";
 
 export default function Footer() {
@@ -23,16 +23,16 @@ export default function Footer() {
                     <a href="#">Home</a>
                 </li>
                 <li className="list-inline-item">
-                    <a href="#">Services</a>
+                    <a href="#">Servicios</a>
                 </li>
                 <li className="list-inline-item">
-                    <a href="#">About</a>
+                    <a href="#">Sobre Nosotros</a>
                 </li>
                 <li className="list-inline-item">
-                    <a href="#">Terms</a>
+                    <a href="#">Términos</a>
                 </li>
                 <li className="list-inline-item">
-                    <a href="#">Privacy Policy</a>
+                    <a href="#">Politicas de Privacidad</a>
                 </li>
             </ul>
             <p className="copyright">MyMarket © 2022</p>
