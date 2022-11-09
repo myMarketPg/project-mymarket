@@ -24,7 +24,7 @@ router.get('/:id', async (req, res) => {
 });
 
 
-router.post('/', async (res,res) => {
+router.post('/', async (req,res) => {
     const { name, price, stock, category, image, description, store } = req.body;
     if(!name || !price || !stock || !category || !image || !description) {
         return res.status(400).json({info: 'Falta ingresar un dato'})
