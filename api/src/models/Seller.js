@@ -22,6 +22,10 @@ module.exports = (sequelize) => {
               this.setDataValue('password', hash(this.username + value));
             },
             allowNull: false,
-        },
-    });
-};
+        }
+    },
+    {
+        timestamps: false
+    }
+      );
+    };
