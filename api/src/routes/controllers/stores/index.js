@@ -11,7 +11,11 @@ module.exports = {
         store.addSeller(seller);
         return `Store successfully created`;
     },
-    listStores: async () => {
+    listStores: async (name) => {
+        if (name) {
+            const store = await Store.findAll({where: {name: name}});
+            return store;
+        }
         const stores = await Store.findAll();
         return stores;
     }
