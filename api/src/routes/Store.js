@@ -17,4 +17,14 @@ router.post('/', async (req, res, next) => {
     }    
 });
 
+router.get('/:name', async () => {
+    try {
+        const { name } = req.params;
+        const store = await controllers.listStores(name);
+        return res.status(200).json({store: store});
+    } catch (error) {
+        next(error);
+    }
+});
+
 module.exports = router;
