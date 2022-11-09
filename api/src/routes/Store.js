@@ -7,7 +7,6 @@ router.get('/', async (req, res, next) => {
     return res.status(200).json({stores: stores});
 });
 
-<<<<<<< HEAD
 router.post('/', async (req, res, next) => {
     try {
         const { name, description, rating, img, idSeller } = req.body;
@@ -17,8 +16,15 @@ router.post('/', async (req, res, next) => {
         next();
     }    
 });
-=======
 
->>>>>>> dev
+router.get('/:name', async () => {
+    try {
+        const { name } = req.params;
+        const store = await controllers.listStores(name);
+        return res.status(200).json({store: store});
+    } catch (error) {
+        next(error);
+    }
+});
 
 module.exports = router;
