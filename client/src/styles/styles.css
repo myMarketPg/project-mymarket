@@ -1,4 +1,12 @@
 @charset "UTF-8";
+.footerTitle {
+  color: green;
+}
+
+.Home_container {
+  background-color: red;
+}
+
 /*!
  * Bootstrap  v5.2.2 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -10934,7 +10942,4 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
-}
-.Home_container {
-  background-color: red;
 }/*# sourceMappingURL=styles.css.map */
