@@ -8,6 +8,21 @@ router.get('/', async (req, res, next) => {
     return res.status(200).json({products: products});
 });
 
+router.get('/:id', async (req, res) => {
+    const { id } = req.params;
+    const allProducts = await controllers.listProducts();
+    try {
+        if(id) {
+            const productId = allProducts.filter(e => e.id == id);
+            productId.length ?
+            res.status(200).json(productId) :
+            res.status(404).send('Producto no encontrado')
+        }
+    } catch(error) {
+        alert('Hubo un problema', error)
+    }
+});
+
 
 router.post('/', async (res,res) => {
     const { name, price, stock, category, image, description, store } = req.body;
