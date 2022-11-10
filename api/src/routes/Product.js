@@ -19,7 +19,7 @@ router.get('/:id', async (req, res) => {
             res.status(404).send('Producto no encontrado')
         }
     } catch(error) {
-        ares.status(404).send('Hubo un problema', error)
+        res.status(404).send('Hubo un problema', error)
     }
 });
 
