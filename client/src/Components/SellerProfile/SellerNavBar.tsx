@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 export default function SellerNavbar() {
+    const dispatch = useDispatch();
+
+    ////ESTADOS/////
+    const [menuSelection, setMenuSelection] = useState("");
+
+    ////RENDER////
     return (
         <div>
             <nav className="navbar navbar-dark bg-dark fixed-top">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">
-                        Offcanvas dark navbar
+                        Seller Name
                     </a>
                     <button
                         className="navbar-toggler"
@@ -19,6 +27,7 @@ export default function SellerNavbar() {
                     </button>
                     <div
                         className="offcanvas offcanvas-end text-bg-dark"
+                        tabIndex={-1}
                         id="offcanvasDarkNavbar"
                         aria-labelledby="offcanvasDarkNavbarLabel"
                     >
@@ -27,7 +36,7 @@ export default function SellerNavbar() {
                                 className="offcanvas-title"
                                 id="offcanvasDarkNavbarLabel"
                             >
-                                Dark offcanvas
+                                Menu
                             </h5>
                             <button
                                 type="button"
