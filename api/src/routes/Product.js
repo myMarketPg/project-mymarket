@@ -67,27 +67,25 @@ router.put('/product/:id', async (req, res) => {
 
 
 router.post('/', async (req, res) => {
-    const { name, price, stock, category, image, description, rating, store } = req.body;
-    if(!name || !price || !stock || !category || !image || !rating || !description) {
+    const { name, price, stock, category, image, description, store } = req.body;
+    if(!name || !price || !stock || !category || !image || !description) {
         return res.status(400).json({info: 'Falta ingresar un dato'})
     }
 
     try {
         const createProduct = Product.create({
-            name: name,
-            price: price,
-            stock: stock,
-            category: category,
-            image: image,
-            rating: rating,
-            description: description
-
+            name,
+            price,
+            stock,
+            category,
+            image,
+            description
         })
         
         
         return res.status(200).send("Producto Añadido")
     } catch(error) {
-        res.status(404).send(error.message)
+        res.status(404).send('Hubo un problema', error)
     }
 });
 
