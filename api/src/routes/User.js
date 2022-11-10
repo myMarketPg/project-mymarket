@@ -1,22 +1,22 @@
 const express = require('express');
 const router = express.Router();
-const controllers = require('./controllers/users');
-const { User } = require('../db')
+const controllers = require('./controllers/Buyer');
+const { Buyer } = require('../db')
 
 router.get('/', async (req, res, next) => {
-    const users = await controllers.listUsers();
-    return res.status(200).json({users: users});
+    const buyers = await controllers.listBuyers();
+    return res.status(200).json({buyers: buyers});
 });
 
 router.get('/:id', async (req, res) => {
     const {id} = req.params;
-    const allUsers = await controllers.listUsers();
+    const allBuyers = await controllers.listBuyers();
     try {
         if(id) {
-            const userId = allUsers.filter(e => e.id == id);
-            userId.length?
-            res.status(200).json(userId) :
-            res.status(404).send('Usuario no encontrado')
+            const buyerId = allBuyers.filter(e => e.id == id);
+            buyerId.length?
+            res.status(200).json(buyerId) :
+            res.status(404).send('Comprador no encontrado')
         }
     } catch (error) {
         alert('Hubo un problema', error)
@@ -29,11 +29,11 @@ router.post('/', async (req, res) => {
         return res.status(400).json({info: 'falta ingresar un dato'})
     }
     try {
-        const createUser = User.create({
+        const createBuyer = Buyer.create({
             name: name,
             password: password
         })
-        res.status(200).send('Usuario agregado')
+        res.status(200).send('Comprador agregado')
     } catch (error) {
         alert('Hubo un problema', error)
     }
