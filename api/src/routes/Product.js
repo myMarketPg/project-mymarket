@@ -37,6 +37,7 @@ router.post('/', async (req, res) => {
             stock,
             category,
             image,
+            rating,
             description
         })
         
