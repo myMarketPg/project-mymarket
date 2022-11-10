@@ -1,3 +1,19 @@
-.Home_container {
-    background-color: black;
+.Home_container{
+    padding: 5px;
+    border: 1px solid black;
+    color: #4b4c4d;
+}
+.col-h1{
+    font-size: 50px;
+    margin: 20px;
+}
+.col-h2{
+    margin: 20px;
+}
+.col-h3{
+    margin: 20px;
+}
+
+.home_register{
+    display: flex;
 }
