@@ -19,7 +19,7 @@ router.get('/:id', async (req, res) => {
             res.status(404).send('Producto no encontrado')
         }
     } catch(error) {
-        res.status(404).send('Hubo un problema', error)
+        ares.status(404).send('Hubo un problema', error)
     }
 });
 
@@ -67,29 +67,28 @@ router.put('/product/:id', async (req, res) => {
 
 
 router.post('/', async (req, res) => {
-    const { name, price, stock, category, image, description, store } = req.body;
-    if(!name || !price || !stock || !category || !image || !description) {
+    const { name, price, stock, category, image, description, rating, store } = req.body;
+    if(!name || !price || !stock || !category || !image || !rating || !description) {
         return res.status(400).json({info: 'Falta ingresar un dato'})
     }
 
     try {
         const createProduct = Product.create({
-            name,
-            price,
-            stock,
-            category,
-            image,
-            description
+            name: name,
+            price: price,
+            stock: stock,
+            category: category,
+            image: image,
+            rating: rating,
+            description: description
+
         })
-        const stores = await Store.findAll({
-            where: {name: store}
-        })
-        createProduct.addStore(stores);
-        return res.status(200).send('Producto Añadido')
+        
+        
+        return res.status(200).send("Producto Añadido")
     } catch(error) {
-        res.status(404).send('Hubo un problema', error)
+        res.status(404).send(error.message)
     }
-    
 });
 
 module.exports = router;
