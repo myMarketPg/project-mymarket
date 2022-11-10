@@ -19,7 +19,7 @@ router.get('/:id', async (req, res) => {
             res.status(404).send('Producto no encontrado')
         }
     } catch(error) {
-        alert('Hubo un problema', error)
+        res.status(404).send('Hubo un problema', error)
     }
 });
 
@@ -36,22 +36,22 @@ router.put('/product/:id', async (req, res) => {
         image,
         description
     }
-    if(!product.name) {
+    if(!changeProduct.name) {
         delete changeProduct.name
     }
-    if(!product.price) {
+    if(!changeProduct.price) {
         delete changeProduct.price
     }
-    if(!product.stock) {
+    if(!changeProduct.stock) {
         delete changeProduct.stock
     }
-    if(!product.category) {
+    if(!changeProduct.category) {
         delete changeProduct.category
     }
-    if(!product.image) {
+    if(!changeProduct.image) {
         delete changeProduct.image
     }
-    if(!product.description) {
+    if(!changeProduct.description) {
         delete changeProduct.description
     }
 
@@ -87,7 +87,7 @@ router.post('/', async (req, res) => {
         createProduct.addStore(stores);
         return res.status(200).send('Producto Añadido')
     } catch(error) {
-        alert('Hubo un problema', error)
+        res.status(404).send('Hubo un problema', error)
     }
     
 });
