@@ -23,6 +23,48 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+router.put('/product/:id', async (req, res) => {
+    const { id } = req.params;
+    const { name, price, stock, category, image, description} = req.body;
+
+    let changeProduct = {
+        id: parseInt(id),
+        name,
+        price,
+        stock,
+        category,
+        image,
+        description
+    }
+    if(!product.name) {
+        delete changeProduct.name
+    }
+    if(!product.price) {
+        delete changeProduct.price
+    }
+    if(!product.stock) {
+        delete changeProduct.stock
+    }
+    if(!product.category) {
+        delete changeProduct.category
+    }
+    if(!product.image) {
+        delete changeProduct.image
+    }
+    if(!product.description) {
+        delete changeProduct.description
+    }
+
+    try {
+        const product = 
+        controllers.modifyProduct(changeProduct);
+        delete product;
+        res.status(200).send(product)
+    } catch(error) {
+        res.status(404).send({error: 'Error al editar producto'})
+    }
+});
+
 
 router.post('/', async (req, res) => {
     const { name, price, stock, category, image, description, store } = req.body;
