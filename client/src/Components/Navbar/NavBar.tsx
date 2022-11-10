@@ -5,7 +5,7 @@ export default function NavBar() {
         <div>
             <div>
                 <h1>myMarket</h1>
-                <div>
+                <div  className="NavBar_btns" >
                     <button type="button" className="btn btn-outline-light">
                         Sobre Nosotros
                     </button>

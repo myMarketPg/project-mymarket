@@ -24,7 +24,7 @@ server.use((req, res, next) => {
 });
 
 server.use('/api', routes);
-server.use('/admin', auth);
+// server.use('/admin', auth);
 
 // Error catching endware.
 server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
