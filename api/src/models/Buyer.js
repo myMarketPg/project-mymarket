@@ -16,9 +16,6 @@ module.exports = (sequelize) => {
     },
     password: {
       type: DataTypes.STRING,
-      set(value) {
-        this.setDataValue('password', hash(this.username + value));
-      },
       allowNull: false,
     }
   },
