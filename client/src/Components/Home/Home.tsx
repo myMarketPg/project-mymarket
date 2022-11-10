@@ -1,15 +1,28 @@
 import React from "react";
 // import { Link } from "react-router-dom";
-import Footer from "../Footer/Footer";
+import Footer from "../Footer/footer";
 import NavBar from "../Navbar/NavBar";
+import Register from "./Register";
+
 
 export default function Home() {
     return (
         <div>
             <NavBar />
             <div className="Home_container">
-                <h1>Bienvenido a My Market!</h1>
-                <h2>Creá tu propia tienda y potencia tu negocio!</h2>
+            <div className="row_container">
+                <div className="row">
+                    <div className="col">
+                        <h1 className="col-h1">Bienvenido a My Market!</h1>
+                        <h2 className="col-h2">Creá tu propia tienda y potenciá tu negocio!</h2>
+                        <h3 className="col-h3">Pasarela de pagos integrada</h3>
+                    </div>
+                    <div className="col">
+                        <div className="home_register"><Register/> </div>
+                       
+                    </div>
+                </div>
+            </div>
             </div>
             <Footer />
         </div>
