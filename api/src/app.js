@@ -3,7 +3,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('./routes/index.js');
-const auth = require('./routes/auth');
+const auth = require('./routes/auth.js');
 
 require('./db.js');
 
@@ -11,8 +11,8 @@ const server = express();
 
 server.name = 'API';
 
-server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
-server.use(bodyParser.json({ limit: '50mb' }));
+server.use(express.urlencoded({ extended: true, limit: '50mb' }));
+server.use(express.json({ limit: '50mb' }));
 server.use(cookieParser());
 server.use(morgan('dev'));
 server.use((req, res, next) => {
@@ -24,7 +24,10 @@ server.use((req, res, next) => {
 });
 
 server.use('/api', routes);
-// server.use('/admin', auth);
+server.use('/admin', auth);
+server.get('/', (req, res) => {
+  return res.status(200).json({message: 'Application My Market App'})
+});
 
 // Error catching endware.
 server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
