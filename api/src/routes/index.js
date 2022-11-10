@@ -1,11 +1,11 @@
 const { Router } = require('express');
 // Importación de todos los routers;
-const userMiddleware = require('./User');
+const buyerMiddleware = require('./Buyer');
 const productMiddleware = require('./Product')
 const router = Router();
 
 // Configuración de los routers
-router.use('/users', userMiddleware);
+router.use('/buyers', buyerMiddleware);
 
 router.use('/product', productMiddleware);
 
