@@ -25,18 +25,19 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     const {name, password} = req.body;
-    if(!name || ! password) {
+    if(!name || !password) {
         return res.status(400).json({info: 'falta ingresar un dato'})
     }
     try {
         const createUser = User.create({
-            name,
-            password
+            name: name,
+            password: password
         })
         res.status(200).send('Usuario agregado')
     } catch (error) {
         alert('Hubo un problema', error)
     }
 });
+
 
 module.exports = router;
