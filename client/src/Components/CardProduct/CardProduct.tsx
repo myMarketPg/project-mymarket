@@ -24,13 +24,13 @@ export const CardProduct: React.FC<IProps> = ({
   return (
     <>
       <li>
-        {/* <Link> */}
-        <h3>{name}</h3>
-        <h4>{category}</h4>
-        <img src={image} alt={name} />
-        <h4>{price}</h4>
-        <h5>⭐{rating}</h5>
-        {/* </Link> */}
+        <Link to="/:id/">
+          <h3>{name}</h3>
+          <h4>{category}</h4>
+          <img src={image} alt={name} />
+          <h4>{price}</h4>
+          <h5>⭐{rating}</h5>
+        </Link>
       </li>
     </>
   );
