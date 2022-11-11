@@ -1,6 +1,8 @@
 const { Router } = require('express');
 // Importación de todos los routers;
+const findBuyerMiddleware = require('./findBuyer');
 const buyerMiddleware = require('./Buyer');
+const postBuyerMiddleware = require('./post_Buyer');
 const productMiddleware = require('./Product');
 const postProductMiddleware = require('./post_product');
 const putProductMiddleware = require('./put_product');
@@ -12,7 +14,9 @@ const postAdminMiddleware = require('./post_admin');
 const router = Router();
 
 // Configuración de los routers
-router.use('/buyers', buyerMiddleware);
+router.use('/findBuyer', findBuyerMiddleware);
+router.use('/buyer', buyerMiddleware);
+router.use('/buyer', postBuyerMiddleware);
 router.use('/product', productMiddleware);
 router.use('/product', postProductMiddleware);
 router.use('/product', deleteProductMiddleware);
