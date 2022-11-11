@@ -1,7 +1,7 @@
 import React from "react";
-import SellerNavbar from "./NavbarSeller";
+import SellerNavbar from "./SellerNavbar";
 
-export default function DashboardSeller() {
+export default function SellerDashboard() {
   return (
     <div>
       <SellerNavbar />
