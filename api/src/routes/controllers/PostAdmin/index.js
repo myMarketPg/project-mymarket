@@ -1,9 +1,9 @@
 const { Admin } = require('../../../db');
 
 module.exports = {
-    postAdmin: async (name, password) => {
+    postAdmin: async (userName, password) => {
         const creatAdmin = Admin.create({
-            name: name,
+            userName: userName,
             password: password
         });
     }
