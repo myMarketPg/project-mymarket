@@ -1,7 +1,7 @@
 import React from "react";
 import SellerNavbar from "./SellerNavBar";
 
-export default function SellerProfile() {
+export default function SellerDashboard() {
     return (
         <div>
             <SellerNavbar />

@@ -1,7 +1,7 @@
 import { Route, BrowserRouter } from "react-router-dom";
 
 import Home from "./Components/Home/Home";
-import SellerProfile from "./Components/SellerProfile/SellerProfile";
+import SellerDashboard from "./Components/SellerProfile/SellerDashboard";
 
 function App() {
     return (
@@ -11,7 +11,7 @@ function App() {
                 <Route
                     exact
                     path="/sellerprofile"
-                    render={() => <SellerProfile />}
+                    render={() => <SellerDashboard />}
                 />
             </div>
         </BrowserRouter>
