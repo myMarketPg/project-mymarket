@@ -1,5 +1,9 @@
 import { ActionType } from "../action/types";
 
+export interface StoreState {
+  buyers: Buyer[];
+}
+
 export interface Seller {
   id: string;
   name: string;
@@ -10,7 +14,7 @@ export interface Seller {
 export interface Buyer {
   id: string;
   name: string;
-  mail: string;
+  email: string;
   password: string;
 }
 
@@ -23,16 +27,6 @@ export interface Product {
   image: string;
   rating: number;
   description: string;
-}
-
-export interface stateDashboardSeller {
-  buyers: object[];
-  allBuyers: object[];
-}
-
-export interface actionDashboardSeller {
-  type: string;
-  payload: string;
 }
 
 export interface getAllBuyersAction {

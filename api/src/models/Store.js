@@ -9,24 +9,26 @@ module.exports = (sequelize) => {
         primaryKey: true,
         defaultValue: DataTypes.UUIDV4
     },
-    name: {
+    banner: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
-        type: DataTypes.TEXT,
-        allowNull: false
+    logo: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-    rating: {
-        type: DataTypes.FLOAT,
-        validate: {isIn: [[1, 2, 3, 4, 5]]}
+    phoneNumber: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-    img: {
+    email: {
         type: DataTypes.STRING,
         allowNull: false
-    }
-  }, {
-    timestamps: false
+    },
+    adress: {
+      type: DataTypes.STRING,
+      allowNull: false
+  }
   },
   {
     timestamps: false

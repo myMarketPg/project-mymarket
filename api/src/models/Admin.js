@@ -9,15 +9,12 @@ module.exports = (sequelize) => {
       primaryKey: true,
       allowNull: false,
     },
-    name: {
+    userName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     password: {
       type: DataTypes.STRING,
-      set(value) {
-        this.setDataValue('password', hash(this.username + value));
-      },
       allowNull: false,
     }
   },

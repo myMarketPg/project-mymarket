@@ -1,12 +1,10 @@
 import { combineReducers } from "redux";
 //aca nos vamos a traer todos los reducers
-import dashboardSellerReducer from "./dashboardSellerReducer";
+import buyersReducer from "./buyersReducer";
 
 //ponemos el reducer dentro del objeto
 export const reducers = combineReducers({
-  dashboardSeller: dashboardSellerReducer,
+  buyers: buyersReducer,
 });
 
 export type State = ReturnType<typeof reducers>;
-
-//////

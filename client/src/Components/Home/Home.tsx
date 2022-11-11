@@ -3,13 +3,13 @@ import React from "react";
 import Footer from "../Footer/footer";
 import NavBar from "../Navbar/NavBar";
 import Register from "./Register";
-import Prueba from "../ComponentePruebaRedux/prueba";
+import Componente from "../ComponentePruebaRedux/Componente";
 
 export default function Home() {
   return (
     <div>
       <NavBar />
-      <Prueba />
+      <Componente buyer={[]} />
       <div className="Home_container">
         <div className="row_container">
           <div className="row">
