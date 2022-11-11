@@ -21,17 +21,30 @@ export const CardProduct: React.FC<IProps> = ({
   rating,
   description,
 }: IProps) => {
+  const style: object = { margin: "18rem" };
+
   return (
     <>
-      <li>
-        <Link to="/:id/">
-          <h3>{name}</h3>
-          <h4>{category}</h4>
-          <img src={image} alt={name} />
-          <h4>{price}</h4>
-          <h5>⭐{rating}</h5>
-        </Link>
-      </li>
+      <div className="card" style={style}>
+        <img src={image} className="card-img-top" alt={name} />
+        <div className="card-body">
+          <h5 className="card-title">{name}</h5>
+          <p className="card-text">{description}</p>
+        </div>
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">{price}</li>
+          <li className="list-group-item">{category}</li>
+          <li className="list-group-item">{rating}</li>
+        </ul>
+        <div className="card-body">
+          <a href="#" className="card-link">
+            Carrito
+          </a>
+          <a href="#" className="card-link">
+            Comprar
+          </a>
+        </div>
+      </div>
     </>
   );
 };
