@@ -11,6 +11,11 @@ const sellerMiddleware = require('./Seller');
 const postSellerMiddleware = require('./post_Seller');
 const adminMiddleware = require('./Admin');
 const postAdminMiddleware = require('./post_admin');
+const storeMiddleware = require('./Store');
+const postStoreMiddleware = require('./post_store');
+const putStoresMiddleware = require('./put_stores'); 
+const orderMiddleware = require('./Order');
+
 const router = Router();
 
 // Configuración de los routers
@@ -25,6 +30,10 @@ router.use('/seller', sellerMiddleware);
 router.use('/seller', postSellerMiddleware);
 router.use('/admin', adminMiddleware);
 router.use('/admin', postAdminMiddleware);
+router.use('/store', storeMiddleware);
+router.use('/store', postStoreMiddleware);
+router.use('/store', putStoresMiddleware);
+router.use('/order', orderMiddleware);
 
 
 module.exports = router;

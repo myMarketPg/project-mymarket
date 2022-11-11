@@ -13,13 +13,13 @@ router.get('/:id', async (req, res) => {
     const allProducts = await controllers.listProducts();
     try {
         if(id) {
-            const productId = allProducts.filter(e => e.id == id);
+            const productId = allProducts.filter(e => e.id === id);
             productId.length ?
             res.status(200).json(productId) :
             res.status(404).send('Producto no encontrado')
         }
     } catch(error) {
-        alert('Hubo un problema', error)
+        res.status(404).send(error.message)
     }
 });
 
