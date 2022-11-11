@@ -31,34 +31,48 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Buyer, Store, Seller, Product, Admin, Order } = sequelize.models;
+const { Buyer, Categori, Product, Order } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
 
-Seller.hasOne(Store);
-Store.belongsTo(Seller);
-
-Store.hasMany(Product);
-Product.belongsTo(Store);
-
-Seller.hasMany(Product);
-Product.belongsTo(Seller);
-
-Admin.hasOne(Seller);
-Seller.belongsTo(Admin);
-
-Admin.hasOne(Buyer);
-Buyer.belongsTo(Admin);
-
-Seller.hasMany(Order);
-Order.belongsTo(Seller);
+Categori.hasMany(Product);
+Product.belongsTo(Categori);
 
 Buyer.hasMany(Order);
 Order.belongsTo(Buyer);
 
-Order.belongsToMany(Product, { through: 'Order_Product'});
-Product.belongsToMany(Order, { through: 'Order_Product'});
+Product.belongsToMany(Order, { through: 'Product_Order' });
+Order.belongsToMany(Product, { through: 'Product_Order' });
+
+
+// EN CASO DE VOLVER AL MULTITIENDA DESCOMENTAR LAS RELACIONES DE ABAJO
+
+// const { Buyer, Seller, Product, Order, Store, Admin } = sequelize.models;
+
+// Seller.hasOne(Store);
+// Store.belongsTo(Seller);
+
+// Store.hasMany(Product);
+// Product.belongsTo(Store);
+
+// Seller.hasMany(Product);
+// Product.belongsTo(Seller);
+
+// Admin.hasOne(Seller);
+// Seller.belongsTo(Admin);
+
+// Admin.hasOne(Buyer);
+// Buyer.belongsTo(Admin);
+
+// Seller.hasMany(Order);
+// Order.belongsTo(Seller);
+
+// Buyer.hasMany(Order);
+// Order.belongsTo(Buyer);
+
+// Order.belongsToMany(Product, { through: 'Order_Product'});
+// Product.belongsToMany(Order, { through: 'Order_Product'});
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
