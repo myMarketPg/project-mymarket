@@ -40,9 +40,11 @@ router.put('/product/:id', (req, res) => {
     }
     try {
         let product =
-        controllers.modifyProduct(changeProduct);
+        controllers.listProducts().modifyProduct(changeProduct);
         res.status(200).send(product)
     } catch(error) {
         res.status(404).send({error: 'Producto no cambiado'})
     }
 })
+
+module.exports = router;
