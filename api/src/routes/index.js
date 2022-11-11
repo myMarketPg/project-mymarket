@@ -20,8 +20,8 @@ const router = Router();
 
 // Configuración de los routers
 router.use('/findBuyer', findBuyerMiddleware);
-router.use('/buyer', buyerMiddleware);
-router.use('/buyer', postBuyerMiddleware);
+router.use('/buyers', buyerMiddleware);
+router.use('/buyers', postBuyerMiddleware);
 router.use('/product', productMiddleware);
 router.use('/product', postProductMiddleware);
 router.use('/product', deleteProductMiddleware);
