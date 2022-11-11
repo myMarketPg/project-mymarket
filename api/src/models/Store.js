@@ -21,7 +21,7 @@ module.exports = (sequelize) => {
         type: DataTypes.FLOAT,
         validate: {isIn: [[1, 2, 3, 4, 5]]}
     },
-    img: {
+    image: {
         type: DataTypes.STRING,
         allowNull: false
     }
