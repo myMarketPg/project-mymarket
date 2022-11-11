@@ -8,10 +8,10 @@ router.post('/', async(req, res) => {
         res.status(400).json({info: 'falta ingresar un dato'})
     }
     try {
-        controllers.postAdmin(userName, password);
-        res.status(200).send('Vendedor agregado');
+        await controllers.postAdmin(userName, password);
+        res.status(200).send('Admin agregado');
     } catch (error) {
-        alert('Hubo un problema', error);
+        res.status(404).alert('Hubo un problema', error);
     }
 });
 
