@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const controller1 = require('./controllers/AllAdmins');
-const controller2 = require('./controllers/PostAdmin');
+const controller = require('./controllers/Admin');
 
 router.get('/', async(req, res) => {
     try {
@@ -18,7 +17,7 @@ router.post('/', async(req, res) => {
         res.status(400).json({info: 'falta ingresar un dato'})
     }
     try {
-        controller2.postAdmin(name, password);
+        controller.postAdmin(name, password);
         res.status(200).send('Vendedor agregado');
     } catch (error) {
         alert('Hubo un problema', error);
