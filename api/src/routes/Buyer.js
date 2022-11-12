@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+<<<<<<< HEAD
 const controller1 = require('./controllers/AllBuyers');
 const controller2 = require('./controllers/FindBuyer');
 const controller3 = require('./controllers/PostBuyer');
@@ -37,4 +38,13 @@ router.post('/', async(req, res) => {
 });
 
 
+=======
+const controllers = require('./controllers/buyers');
+
+router.get('/', async (req, res, next) => {
+    const buyers = await controllers.listUsers();
+    return res.status(200).json({buyers: buyers});
+});
+
+>>>>>>> Dev
 module.exports = router;
