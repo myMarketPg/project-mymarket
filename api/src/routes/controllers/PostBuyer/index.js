@@ -1,10 +1,13 @@
 const { Buyer } = require('../../../db');
 
 module.exports = {
-    postBuyer: async (name, password) => {
+    postBuyer: async (name, phoneNum, email, password, addres) => {
         const creatBuyer = Buyer.create({
             name: name,
-            password: password
-        });
+            phoneNum: phoneNum,
+            email: email,
+            password: password,
+            addres: addres,
+                });
     }
 };
