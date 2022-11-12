@@ -17,7 +17,10 @@ module.exports = (sequelize) => {
     email: {
       type: DataTypes.STRING,
       allowNull: false,
+<<<<<<< HEAD
     },
+=======
+>>>>>>> c0bd376c27a2710ca32650924a69d158da974e6e
     phoneNum: {
       type: DataTypes.STRING,
       allowNull: false,
