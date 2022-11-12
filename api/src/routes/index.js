@@ -6,7 +6,7 @@ const router = Router();
 
 // Configuración de los routers
 router.use('/buyers', buyerMiddleware);
-router.use('/product', productMiddleware);
+router.use('/products', productMiddleware);
 
 
 module.exports = router;
