@@ -1,21 +1,30 @@
 const { Router } = require('express');
 // Importación de todos los routers;
 
-const buyerMiddleware = require('./Buyer');
-const productMiddleware = require('./Product');
-const sellerMiddleware = require('./Seller');
 const adminMiddleware = require('./Admin');
 const buyerMiddleware = require('./Buyer');
+const categoriMiddleware = require('./Categori');
+const orderMiddleware = require('./Order');
 const productMiddleware = require('./Product');
+const storeMiddleware = require('./Store');
+// const sellerMiddleware = require('./Seller');
 const router = Router();
 
 // Configuración de los routers
+router.use('/admin', adminMiddleware);
 router.use('/buyers', buyerMiddleware);
+router.use('/categori', categoriMiddleware);
+router.use('/order', orderMiddleware);
 router.use('/products', productMiddleware);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
 >>>>>>> dev
 
+=======
+router.use('/store', storeMiddleware);
+// router.use('/seller', sellerMiddleware);
+>>>>>>> dev
 
 module.exports = router;
