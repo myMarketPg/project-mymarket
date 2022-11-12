@@ -14,8 +14,10 @@ export interface Seller {
 export interface Buyer {
   id: string;
   name: string;
+  phoneNum: number;
   email: string;
   password: string;
+  addres: string;
 }
 
 export interface Product {
