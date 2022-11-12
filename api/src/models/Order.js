@@ -8,17 +8,17 @@ module.exports = (sequelize) => {
           primaryKey: true,
           allowNull: false,
         },
-        number: {
-          type: DataTypes.INTEGER,
-          allowNull: false,
-        },
-        product: {
-          type: DataTypes.STRING,
-          allowNull: false,
-        },
         date: {
           type: DataTypes.DATEONLY,
           defaultValue: DataTypes.NOW,
+          allowNull: false,
+        },
+        totalAmount: {
+          type: DataTypes.DECIMAL,
+          allowNull: false,
+        },
+        state: {
+          type: DataTypes.STRING,
           allowNull: false,
         }
       },

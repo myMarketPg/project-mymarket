@@ -1,15 +1,14 @@
 const { Product } = require('../../../db');
 
 module.exports = {
-    postProduct: async (name, price, stock, category, image, description, rating) => {
+    postProduct: async (name, image, stock, description, price, featured) => {
         const createProduct = Product.create({
-            name,
-            price,
-            stock,
-            category,
-            image,
-            rating,
-            description
+            name: name,
+            image: image,
+            stock: stock,
+            description: description,
+            price: price,
+            featured: featured
         });
     }
 };

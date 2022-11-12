@@ -1,12 +1,13 @@
 const { Store } = require('../../../db');
 
 module.exports = {
-    postStore: async (name, image, description, rating) => {
+    postStore: async (banner, logo, phoneNumber, email, adress) => {
         const creatStore = Store.create({
-            name, 
-            image, 
-            description, 
-            rating
+            banner: banner,
+            logo: logo,
+            phoneNumber: phoneNumber,
+            email: email,
+            adress: adress
         });
     }
 };
