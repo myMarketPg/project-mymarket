@@ -1,15 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const controllers = require('./controllers/AllBuyers');
+const controllers = require('./controllers/buyers');
 
 router.get('/', async (req, res, next) => {
-    try {
-        const buyers = await controllers.listBuyers();
-        res.status(200).json({buyers: buyers});
-    } catch (error) {
-        res.status(404).send(error.message);
-    }
+    const buyers = await controllers.listUsers();
+    return res.status(200).json({buyers: buyers});
 });
-
 
 module.exports = router;
