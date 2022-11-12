@@ -26,7 +26,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async(req, res) => {
     const { name, image, stock, description, price, featured } = req.body;
-    if( !name || !image || !stock || !description || !price || !featured ) {
+    if( !name || !image || !stock || !description || !price ) {
         res.status(400).json({info: 'falta ingresar un dato'})
     }
     try {
