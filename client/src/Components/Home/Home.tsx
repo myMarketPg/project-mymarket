@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
       <NavBar />
-      <Componente buyer={[]} />
+      <Componente buyer={[]} product={[]} />
       <div className="Home_container">
         <div className="row_container">
           <div className="row">
