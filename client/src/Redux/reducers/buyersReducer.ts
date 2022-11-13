@@ -1,10 +1,8 @@
 import { ActionType } from "../action/types";
 import { Buyer, getAllBuyersAction } from "../Interfaces";
 
-export const buyersReducer = (
-  state: Buyer[] = [],
-  action: getAllBuyersAction
-) => {
+type Action = getAllBuyersAction;
+export const buyersReducer = (state: Buyer[] = [], action: Action) => {
   switch (action.type) {
     case ActionType.GET_ALL_BUYERS:
       return action.payload;

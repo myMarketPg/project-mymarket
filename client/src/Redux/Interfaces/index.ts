@@ -3,12 +3,13 @@ import { ActionType } from "../action/types";
 export interface StoreState {
   buyers: Buyer[];
   products: Product[];
+  store: Store[];
+  admin: Admin[];
 }
 
-export interface Seller {
+export interface Admin {
   id: string;
-  name: string;
-  mail: string;
+  userName: string;
   password: string;
 }
 
@@ -33,6 +34,19 @@ export interface Product {
   featured: boolean;
 }
 
+export interface Store {
+  id: string;
+  banner: string;
+  logo: string;
+  phoneNumber: string;
+  email: string;
+  country: string;
+  city: string;
+  adress: string;
+  state: string;
+  zip: string;
+}
+
 export interface getAllBuyersAction {
   type: ActionType.GET_ALL_BUYERS;
   payload: Buyer[];
@@ -46,4 +60,29 @@ export interface getAllProductsAction {
 export interface getProductDetailAction {
   type: ActionType.GET_PRODUCT_DETAIL;
   payload: Product[];
+}
+
+export interface getStoreAction {
+  type: ActionType.GET_STORE;
+  payload: Store[];
+}
+
+export interface updateStoreAction {
+  type: ActionType.UPDATE_STORE;
+  payload: Store[];
+}
+
+export interface getAdminAction {
+  type: ActionType.GET_ADMIN;
+  payload: Admin[];
+}
+
+export interface updateAdminAction {
+  type: ActionType.UPDATE_ADMIN;
+  payload: Admin[];
+}
+
+export interface postAdminAction {
+  type: ActionType.POST_ADMIN;
+  payload: Admin[];
 }
