@@ -12,12 +12,12 @@ router.get('/', async(req, res) => {
 });
 
 router.post('/', async(req, res) => {
-    const {name, password} = req.body;
+    const {userName, password} = req.body;
     if(!name || !password) {
         res.status(400).json({info: 'falta ingresar un dato'})
     }
     try {
-        controller.postAdmin(name, password);
+        controller.postAdmin(userName, password);
         res.status(200).send('Vendedor agregado');
     } catch (error) {
         alert('Hubo un problema', error);

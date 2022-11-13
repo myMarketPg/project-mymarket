@@ -106,25 +106,35 @@ export default function SellerMenuTab() {
                     </button>
                 </li>
             </ul>
-            <div className="tab-content" id="myTabContent">
+            <div
+                className="tab-content  justify-content-center"
+                id="myTabContent"
+            >
                 <div
-                    className="tab-pane fade show active"
+                    className="tab-pane fade show active  justify-content-center"
                     id="contact-tab-pane"
                     role="tabpanel"
                     aria-labelledby="contact-tab"
                     tabIndex={0}
                 >
-                    <h1> COMPONENTE PARA EDITAR CONTACTO</h1>
-                    <SellerManageContact />
+                    <div className="">
+                        <h2 className="text-center">EDIT CONTACT INFO</h2>
+                        <hr />
+                        <br />
+                        <SellerManageContact />
+                    </div>
                 </div>
                 <div
-                    className="tab-pane fade"
+                    className="tab-pane fade justify-content-center"
                     id="products-tab-pane"
                     role="tabpanel"
                     aria-labelledby="products-tab"
                     tabIndex={0}
                 >
-                    <h1> COMPONENTE EDITAR PRODUCTOS</h1>
+                    <h2 className="text-center">MANAGE PRODUCTS</h2>
+
+                    <hr />
+                    <br />
                     <SellerManageProducts />
                 </div>
                 <div
@@ -134,7 +144,10 @@ export default function SellerMenuTab() {
                     aria-labelledby="categories-tab"
                     tabIndex={0}
                 >
-                    <h1> COMPONENTE PARA EDITAR CATEGORIES</h1>
+                    <h2 className="text-center">EDIT CATEGORIES</h2>
+
+                    <hr />
+                    <br />
                     <SellerManageCategories />
                 </div>
                 <div
@@ -144,17 +157,23 @@ export default function SellerMenuTab() {
                     aria-labelledby="editStore-tab"
                     tabIndex={0}
                 >
-                    <h1>COMPONENTE EDIT STORE</h1>
+                    <h2 className="text-center">EDIT STORE</h2>
+
+                    <hr />
+                    <br />
                     <SellerManageStore />
                 </div>
                 <div
-                    className="tab-pane fade"
+                    className="tab-pane fade justify"
                     id="clients-tab-pane"
                     role="tabpanel"
                     aria-labelledby="clients-tab"
                     tabIndex={0}
                 >
-                    <h1>COMPONENTE DE INFO/ADMINISTRAR CLIENTES</h1>
+                    <h2 className="text-center">CLIENTS MANAGEMENT</h2>
+
+                    <hr />
+                    <br />
                     <SellerManageClients />
                 </div>
                 <div
@@ -164,7 +183,10 @@ export default function SellerMenuTab() {
                     aria-labelledby="orders-tab"
                     tabIndex={0}
                 >
-                    <h1>COMPONENTE DE INFO/ADMINISTRAR ORDENES</h1>
+                    <h2 className="text-center">ORDERS MANAGEMENT</h2>
+
+                    <hr />
+                    <br />
                     <SellerManageOrders />
                 </div>
             </div>
