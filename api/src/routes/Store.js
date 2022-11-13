@@ -8,12 +8,12 @@ router.get('/', async (req, res, next) => {
 });
 
 router.post('/', async(req, res) => {
-    const { banner, logo, phoneNumber, email, adress } = req.body;
-    if(!banner || !logo || !phoneNumber || !email || !adress) {
+    const { banner, logo, phoneNumber, email, adress, country, city, state, zip } = req.body;
+    if(!banner || !logo || !phoneNumber || !email || !adress || !country || !city || !state || !zip) {
         res.status(400).json({info: 'falta ingresar un dato'})
     }
     try {
-        controllers.postStore(banner, logo, phoneNumber, email, adress);
+        controllers.postStore(banner, logo, phoneNumber, email, adress, country, city, state, zip);
         res.status(200).send('Tienda creada');
     } catch (error) {
         res.status(404).send(error.message);
@@ -22,27 +22,47 @@ router.post('/', async(req, res) => {
 
 router.put('/product/:id', (req, res) => {
     const {id} = req.params;
-    const { name, image, description, rating } = req.body;
+    const { banner, logo, phoneNumber, email, adress, country, city, state, zip } = req.body;
 
     let changeStore = {
         id: parseInt(id),
-        name,  
-        image, 
-        description, 
-        rating
+        banner,  
+        logo, 
+        phoneNumber, 
+        email,
+        adress,
+        country,
+        city,
+        state,
+        zip
     }
 
-    if(!changeStore.name) {
-        delete changeStore.name
+    if(!changeStore.banner) {
+        delete changeStore.banner
     }
-    if(!changeStore.image) {
-        delete changeStore.image
+    if(!changeStore.logo) {
+        delete changeStore.logo
     }
-    if(!changeStore.description) {
-        delete changeStore.description
+    if(!changeStore.phoneNumber) {
+        delete changeStore.phoneNumber
     }
-    if(!changeStore.rating) {
-        delete changeStore.rating
+    if(!changeStore.email) {
+        delete changeStore.email
+    }
+    if(!changeStore.adress) {
+        delete changeStore.adress
+    }
+    if(!changeStore.country) {
+        delete changeStore.country
+    }
+    if(!changeStore.city) {
+        delete changeStore.city
+    }
+    if(!changeStore.state) {
+        delete changeStore.state
+    }
+    if(!changeStore.zip) {
+        delete changeStore.zip
     }
     try {
         let store =
