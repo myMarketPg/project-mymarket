@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import SellerManageCategories from "./ManageComponents/SellerManageCategories";
+import SellerManageClients from "./ManageComponents/SellerManageClients";
+import SellerManageContact from "./ManageComponents/SellerManageContact";
+import SellerManageOrders from "./ManageComponents/SellerManageOrders";
+import SellerManageProducts from "./ManageComponents/SellerManageProducts";
+import SellerManageStore from "./ManageComponents/SellerManageStore";
 
 export default function SellerMenuTab() {
     const dispatch = useDispatch();
@@ -109,6 +115,7 @@ export default function SellerMenuTab() {
                     tabIndex={0}
                 >
                     <h1> COMPONENTE PARA EDITAR CONTACTO</h1>
+                    <SellerManageContact />
                 </div>
                 <div
                     className="tab-pane fade"
@@ -118,6 +125,7 @@ export default function SellerMenuTab() {
                     tabIndex={0}
                 >
                     <h1> COMPONENTE EDITAR PRODUCTOS</h1>
+                    <SellerManageProducts />
                 </div>
                 <div
                     className="tab-pane fade"
@@ -127,6 +135,7 @@ export default function SellerMenuTab() {
                     tabIndex={0}
                 >
                     <h1> COMPONENTE PARA EDITAR CATEGORIES</h1>
+                    <SellerManageCategories />
                 </div>
                 <div
                     className="tab-pane fade"
@@ -136,6 +145,7 @@ export default function SellerMenuTab() {
                     tabIndex={0}
                 >
                     <h1>COMPONENTE EDIT STORE</h1>
+                    <SellerManageStore />
                 </div>
                 <div
                     className="tab-pane fade"
@@ -145,6 +155,7 @@ export default function SellerMenuTab() {
                     tabIndex={0}
                 >
                     <h1>COMPONENTE DE INFO/ADMINISTRAR CLIENTES</h1>
+                    <SellerManageClients />
                 </div>
                 <div
                     className="tab-pane fade"
@@ -154,6 +165,7 @@ export default function SellerMenuTab() {
                     tabIndex={0}
                 >
                     <h1>COMPONENTE DE INFO/ADMINISTRAR ORDENES</h1>
+                    <SellerManageOrders />
                 </div>
             </div>
         </div>
