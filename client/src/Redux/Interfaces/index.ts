@@ -81,3 +81,8 @@ export interface updateAdminAction {
   type: ActionType.UPDATE_ADMIN;
   payload: Admin[];
 }
+
+export interface postAdminAction {
+  type: ActionType.POST_ADMIN;
+  payload: Admin[];
+}

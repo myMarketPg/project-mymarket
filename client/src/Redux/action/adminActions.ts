@@ -22,3 +22,13 @@ export const updateAdmin = () => {
     });
   };
 };
+
+export const postAdmin = () => {
+  return async function (dispatch: Dispatch) {
+    const data = await axios.post<Admin[]>("http://localhost:3001/api/admin");
+    dispatch<postAdminAction[]>({
+      type: ActionType.POST_ADMIN,
+      payload: data.data,
+    });
+  };
+};

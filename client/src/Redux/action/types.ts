@@ -7,4 +7,5 @@ export enum ActionType {
   UPDATE_STORE,
   GET_ADMIN,
   UPDATE_ADMIN,
+  POST_ADMIN,
 }
