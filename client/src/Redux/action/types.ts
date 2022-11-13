@@ -4,4 +4,7 @@ export enum ActionType {
   GET_ALL_PRODUCTS,
   GET_PRODUCT_DETAIL,
   GET_STORE,
+  UPDATE_STORE,
+  GET_ADMIN,
+  UPDATE_ADMIN,
 }

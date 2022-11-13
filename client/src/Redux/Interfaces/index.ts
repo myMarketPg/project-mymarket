@@ -1,16 +1,15 @@
-import { Action } from "history";
 import { ActionType } from "../action/types";
 
 export interface StoreState {
   buyers: Buyer[];
   products: Product[];
   store: Store[];
+  admin: Admin[];
 }
 
-export interface Seller {
+export interface Admin {
   id: string;
-  name: string;
-  mail: string;
+  userName: string;
   password: string;
 }
 
@@ -41,7 +40,11 @@ export interface Store {
   logo: string;
   phoneNumber: string;
   email: string;
+  country: string;
+  city: string;
   adress: string;
+  state: string;
+  zip: string;
 }
 
 export interface getAllBuyersAction {
@@ -62,4 +65,19 @@ export interface getProductDetailAction {
 export interface getStoreAction {
   type: ActionType.GET_STORE;
   payload: Store[];
+}
+
+export interface updateStoreAction {
+  type: ActionType.UPDATE_STORE;
+  payload: Store[];
+}
+
+export interface getAdminAction {
+  type: ActionType.GET_ADMIN;
+  payload: Admin[];
+}
+
+export interface updateAdminAction {
+  type: ActionType.UPDATE_ADMIN;
+  payload: Admin[];
 }
