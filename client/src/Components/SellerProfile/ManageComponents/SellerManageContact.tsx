@@ -6,8 +6,8 @@ export default function SellerManageContact() {
     const [contactForm, setContactForm] = useState({});
 
     return (
-        <div className="justify-content-center">
-            <form className="row g-3 w-25 p-3">
+        <div className="">
+            <form className="row g-3 w-25 p-3 position-absolute top-50 start-50 translate-middle">
                 <div className="col-md-6">
                     <label htmlFor="inputEmail4" className="form-label">
                         Email
