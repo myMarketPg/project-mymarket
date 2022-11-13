@@ -15,5 +15,6 @@ module.exports = {
             price: price,
             featured: featured
         });
+        return createProduct;
     }
 };
