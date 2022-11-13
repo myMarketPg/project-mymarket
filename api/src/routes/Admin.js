@@ -4,7 +4,7 @@ const controller = require('./controllers/Admin');
 
 router.get('/', async(req, res) => {
     try {
-        const admins = await controller1.listAdmins();
+        const admins = await controller.listAdmins();
         res.status(200).json({admins: admins});
     } catch (error) {
         res.status(404).send(error.message);
