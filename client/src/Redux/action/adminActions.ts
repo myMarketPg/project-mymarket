@@ -1,12 +1,17 @@
 import axios from "axios";
 import { ActionType } from "./types";
 import { Dispatch } from "redux";
-import { Admin, getAdminAction, updateAdminAction } from "../Interfaces";
+import {
+  Admin,
+  getAdminAction,
+  updateAdminAction,
+  postAdminAction,
+} from "../Interfaces";
 
 export const getAdmin = () => {
   return async function (dispatch: Dispatch) {
     const data = await axios.get<Admin[]>("http://localhost:3001/api/admin");
-    dispatch<getAdminAction[]>({
+    dispatch<getAdminAction>({
       type: ActionType.GET_ADMIN,
       payload: data.data,
     });
@@ -16,7 +21,7 @@ export const getAdmin = () => {
 export const updateAdmin = () => {
   return async function (dispatch: Dispatch) {
     const data = await axios.put<Admin[]>("http://localhost:3001/api/admin");
-    dispatch<updateAdminAction[]>({
+    dispatch<updateAdminAction>({
       type: ActionType.UPDATE_ADMIN,
       payload: data.data,
     });
@@ -26,7 +31,7 @@ export const updateAdmin = () => {
 export const postAdmin = () => {
   return async function (dispatch: Dispatch) {
     const data = await axios.post<Admin[]>("http://localhost:3001/api/admin");
-    dispatch<postAdminAction[]>({
+    dispatch<postAdminAction>({
       type: ActionType.POST_ADMIN,
       payload: data.data,
     });

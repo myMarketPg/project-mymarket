@@ -16,7 +16,7 @@ export const getStore = () => {
 export const updateStore = () => {
   return async function (dispatch: Dispatch) {
     const data = await axios.put<Store[]>("http://localhost:3001/api/store");
-    dispatch<updateStoreAction[]>({
+    dispatch<updateStoreAction>({
       type: ActionType.UPDATE_STORE,
       payload: data.data,
     });
