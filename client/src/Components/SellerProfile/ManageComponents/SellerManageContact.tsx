@@ -6,8 +6,8 @@ export default function SellerManageContact() {
     const [contactForm, setContactForm] = useState({});
 
     return (
-        <div className="">
-            <form className="row g-3 w-25 p-3 position-absolute top-50 start-50 translate-middle">
+        <div className="position-relative">
+            <form className="row g-2 w-25 p-2 position-absolute top-50 start-40">
                 <div className="col-md-6">
                     <label htmlFor="inputEmail4" className="form-label">
                         Email
@@ -16,6 +16,16 @@ export default function SellerManageContact() {
                         type="email"
                         className="form-control"
                         id="inputEmail4"
+                    />
+                </div>
+                <div className="col-12">
+                    <label htmlFor="inputAddress" className="form-label">
+                        Phone Number
+                    </label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="inputPhoneNumber"
                     />
                 </div>
 
@@ -56,9 +66,19 @@ export default function SellerManageContact() {
                     </label>
                     <input type="text" className="form-control" id="inputZip" />
                 </div>
+                <div className="col-md-6">
+                    <label htmlFor="inputCity" className="form-label">
+                        Country
+                    </label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="inputCountry"
+                    />
+                </div>
 
                 <div className="col-12">
-                    <button type="submit" className="btn btn-primary">
+                    <button type="submit" className="btn  btn-success btn-lg">
                         Save
                     </button>
                 </div>

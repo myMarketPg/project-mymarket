@@ -118,9 +118,9 @@ export default function SellerMenuTab() {
                     tabIndex={0}
                 >
                     <div className="">
-                        <h2 className="position-absolute top-30 start-50 translate-middle-x">
-                            EDIT CONTACT INFO
-                        </h2>
+                        <h2 className="text-center">EDIT CONTACT INFO</h2>
+                        <hr />
+                        <br />
                         <SellerManageContact />
                     </div>
                 </div>
@@ -131,9 +131,10 @@ export default function SellerMenuTab() {
                     aria-labelledby="products-tab"
                     tabIndex={0}
                 >
-                    <h2 className="position-absolute top-30 start-50 translate-middle-x">
-                        MANAGE PRODUCTS
-                    </h2>
+                    <h2 className="text-center">MANAGE PRODUCTS</h2>
+
+                    <hr />
+                    <br />
                     <SellerManageProducts />
                 </div>
                 <div
@@ -143,9 +144,10 @@ export default function SellerMenuTab() {
                     aria-labelledby="categories-tab"
                     tabIndex={0}
                 >
-                    <h2 className="position-absolute top-30 start-50 translate-middle-x">
-                        EDIT CATEGORIES
-                    </h2>
+                    <h2 className="text-center">EDIT CATEGORIES</h2>
+
+                    <hr />
+                    <br />
                     <SellerManageCategories />
                 </div>
                 <div
@@ -155,9 +157,10 @@ export default function SellerMenuTab() {
                     aria-labelledby="editStore-tab"
                     tabIndex={0}
                 >
-                    <h2 className="position-absolute top-30 start-50 translate-middle-x">
-                        EDIT STORE
-                    </h2>
+                    <h2 className="text-center">EDIT STORE</h2>
+
+                    <hr />
+                    <br />
                     <SellerManageStore />
                 </div>
                 <div
@@ -167,9 +170,10 @@ export default function SellerMenuTab() {
                     aria-labelledby="clients-tab"
                     tabIndex={0}
                 >
-                    <h2 className="position-absolute top-30 start-50 translate-middle-x">
-                        CLIENTS MANAGEMENT
-                    </h2>
+                    <h2 className="text-center">CLIENTS MANAGEMENT</h2>
+
+                    <hr />
+                    <br />
                     <SellerManageClients />
                 </div>
                 <div
@@ -179,9 +183,10 @@ export default function SellerMenuTab() {
                     aria-labelledby="orders-tab"
                     tabIndex={0}
                 >
-                    <h2 className="position-absolute top-30 start-50 translate-middle-x">
-                        ORDERS MANAGEMENT
-                    </h2>
+                    <h2 className="text-center">ORDERS MANAGEMENT</h2>
+
+                    <hr />
+                    <br />
                     <SellerManageOrders />
                 </div>
             </div>
