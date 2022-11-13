@@ -7,14 +7,14 @@ import { getAllProducts } from "../../Redux/action/productsActions";
 interface PruebaProps {
   buyer: Buyer[];
   product: Product[];
-  getAllBuyers(): any;
-  getAllProducts(): any;
+  getAllBuyers: () => void;
+  getAllProducts: () => void;
 }
 
-function Componente(props: PruebaProps) {
+function Componente({ getAllBuyers, getAllProducts }: PruebaProps) {
   useEffect(() => {
-    props.getAllBuyers();
-    props.getAllProducts();
+    getAllBuyers();
+    getAllProducts();
   }, []);
 
   return <div>hola</div>;
