@@ -12,7 +12,7 @@ export default function SellerNavbar() {
         <div>
             <nav className="navbar bg-light justify-content-center">
                 <div className="container-fluid">
-                    <h2> Admin Dashboard</h2>
+                    <h2>Admin Dashboard</h2>
                 </div>
             </nav>
         </div>
