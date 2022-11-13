@@ -106,16 +106,21 @@ export default function SellerMenuTab() {
                     </button>
                 </li>
             </ul>
-            <div className="tab-content" id="myTabContent">
+            <div
+                className="tab-content  justify-content-center"
+                id="myTabContent"
+            >
                 <div
-                    className="tab-pane fade show active"
+                    className="tab-pane fade show active  justify-content-center"
                     id="contact-tab-pane"
                     role="tabpanel"
                     aria-labelledby="contact-tab"
                     tabIndex={0}
                 >
-                    <h1> COMPONENTE PARA EDITAR CONTACTO</h1>
-                    <SellerManageContact />
+                    <div className="justify-content-center">
+                        <h1> COMPONENTE PARA EDITAR CONTACTO</h1>
+                        <SellerManageContact />
+                    </div>
                 </div>
                 <div
                     className="tab-pane fade"
