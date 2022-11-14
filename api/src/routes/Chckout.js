@@ -23,7 +23,7 @@ let preference = {
       {
         title: req.body.name,
         unit_price: parseInt(req.body.price),
-        quantity: 1,
+        quantity: parseInt(req.body.quantity),
       },
     ],
   };
