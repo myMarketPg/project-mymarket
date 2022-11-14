@@ -22,7 +22,7 @@ export default function ProductTable({ localProducts }) {
                     </tr>
                 </thead>
                 <tbody className="table-group-divider">
-                    {localProducts.map((product) => {
+                    {localProducts?.map((product) => {
                         return (
                             <tr key={product.id}>
                                 <td>{product.id}</td>
