@@ -20,18 +20,24 @@ export default function ManageProductsNavabar() {
                         Search
                     </button>
                 </form>
+
                 <label className="text-white">CATEGORIES:</label>
                 <form>
-                    <select class="form-select" aria-label="All">
+                    <select
+                        className="form-select"
+                        aria-label="All"
+                        defaultValue="All"
+                    >
                         <option selected>All</option>
                         <option value="1">Calzado</option>
                         <option value="2">Remeras</option>
                         <option value="3">Pantalones</option>
                     </select>
                 </form>
+
                 <label className="text-white">ORDER BY:</label>
                 <form>
-                    <select class="form-select d-flex" aria-label="-">
+                    <select className="form-select d-flex" aria-label="-">
                         <option selected>Open this select menu</option>
                         <option value="1">A-Z</option>
                         <option value="2">Z-A</option>
@@ -45,7 +51,7 @@ export default function ManageProductsNavabar() {
                 </form>
                 <button
                     type="button"
-                    class="btn btn-success"
+                    className="btn btn-success"
                     data-bs-toggle="modal"
                     data-bs-target="#createProductModal"
                 >
