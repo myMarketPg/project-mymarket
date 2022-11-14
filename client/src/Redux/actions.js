@@ -321,7 +321,7 @@ export const updateOrder = (payload, id) => {
 export const deleteOrder = (id) => {
     return async function () {
         try {
-            const data = await axios.delete(`http://localhost:3001/api/order${id}`)
+            const data = await axios.delete(`http://localhost:3001/api/order/${id}`)
             return data
         } catch (error) {
             console.log(error)
