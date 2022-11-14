@@ -36,11 +36,8 @@ export const rootReducer = (state = intialState, action) => {
         case "GET_ADMIN":
             return {
                 ...state,
-                admin: action.payload,
-            };
-        //POSTS
-        case "POST_ADMIN":
-            return { ...state };
+                admin: action.payload
+            }
         //PUTS
         case "UPDATE_STORE":
             return {
