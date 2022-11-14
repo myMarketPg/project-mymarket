@@ -7,6 +7,7 @@ const categoriMiddleware = require('./Categori');
 const orderMiddleware = require('./Order');
 const productMiddleware = require('./Product');
 const storeMiddleware = require('./Store');
+const checkoutMiddleware = require('./Chckout')
 // const sellerMiddleware = require('./Seller');
 const router = Router();
 
@@ -17,6 +18,7 @@ router.use('/categori', categoriMiddleware);
 router.use('/order', orderMiddleware);
 router.use('/products', productMiddleware);
 router.use('/store', storeMiddleware);
+router.use('/checkout', checkoutMiddleware);
 // router.use('/seller', sellerMiddleware);
 
 module.exports = router;
