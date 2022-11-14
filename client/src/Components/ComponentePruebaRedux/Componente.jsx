@@ -1,3 +1,4 @@
+/*
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Buyer, Product, StoreState } from "../../Redux/Interfaces";
@@ -32,3 +33,4 @@ const mapStateToProps = (
 export default connect(mapStateToProps, { getAllBuyers, getAllProducts })(
   Componente
 );
+*/
