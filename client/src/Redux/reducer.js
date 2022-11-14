@@ -38,9 +38,6 @@ function rootReducer(state = intialState, action) {
                 ...state,
                 admin: action.payload
             }
-        //POSTS
-        case "POST_ADMIN":
-            return { ...state }
         //PUTS
         case "UPDATE_STORE":
             return {
