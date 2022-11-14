@@ -13,6 +13,9 @@ export default function SellerNavbar() {
             <nav className="navbar bg-light justify-content-center">
                 <div className="container-fluid">
                     <h2>Admin Dashboard</h2>
+                    <button type="button" class="btn btn-outline-danger">
+                        Log Out
+                    </button>
                 </div>
             </nav>
         </div>
