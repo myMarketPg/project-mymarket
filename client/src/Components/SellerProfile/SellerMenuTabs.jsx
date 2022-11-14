@@ -5,7 +5,7 @@ import SellerManageCategories from "./ManageComponents/SellerManageCategories";
 import SellerManageClients from "./ManageComponents/SellerManageClients";
 import SellerManageContact from "./ManageComponents/SellerManageContact";
 import SellerManageOrders from "./ManageComponents/SellerManageOrders";
-import SellerManageProducts from "./ManageComponents/SellerManageProducts";
+import SellerManageProducts from "./ManageComponents/Products/SellerManageProducts";
 import SellerManageStore from "./ManageComponents/SellerManageStore";
 
 export default function SellerMenuTab() {
@@ -134,7 +134,7 @@ export default function SellerMenuTab() {
                     <h2 className="text-center">MANAGE PRODUCTS</h2>
 
                     <hr />
-                    <br />
+
                     <SellerManageProducts />
                 </div>
                 <div
