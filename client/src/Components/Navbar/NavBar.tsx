@@ -1,42 +1,85 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          myMarket
+          MyMarket
         </a>
         <button
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="#">
-                Sobre Nosotros
+                Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#">
-                Login
+              <Link to="/sobrenosotros">
+                <a className="nav-link" href="#">
+                  Sobre nosotros
+                </a>
+              </Link>
+            </li>
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categorias
               </a>
+              <ul className="dropdown-menu">
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Tecnologia
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Moda
+                  </a>
+                </li>
+                <li></li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Salud
+                  </a>
+                </li>
+              </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#">
-                Register
-              </a>
+              <Link to="/registro">
+                <a className="nav-link">Registrate</a>
+              </Link>
             </li>
           </ul>
+          <form className="d-flex" role="search">
+            <input
+              className="form-control me-2"
+              type="search"
+              placeholder="Busca tu producto"
+              aria-label="Search"
+            />
+            <button className="btn btn-outline-success" type="submit">
+              🔍
+            </button>
+          </form>
         </div>
       </div>
     </nav>
