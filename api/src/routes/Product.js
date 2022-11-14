@@ -25,12 +25,12 @@ router.get('/:id', async (req, res) => {
 
 
 router.post('/', async(req, res) => {
-    const { name, image, stock, description, price, featured } = req.body;
+    const { name, image, stock, description, price, featured, variants } = req.body;
     if( !name || !image || !stock || !description || !price ) {
         res.status(400).json({info: 'falta ingresar un dato'})
     }
     try {
-        controllers.postProduct(name, image, stock, description, price, featured);
+        controllers.postProduct(name, image, stock, description, price, featured, variants);
         res.status(200).send('Producto añadido');
     } catch (error) {
         res.status(404).send(error.message);
