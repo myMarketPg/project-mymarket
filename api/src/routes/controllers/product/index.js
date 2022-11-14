@@ -21,5 +21,17 @@ module.exports = {
         for (let i = 0; i < variantsDB.length; i++) {
             await product.addVariant(variantsDB[i].id);
         }        
+    },
+    modifyProduct: async (object) => {
+        let product = await Product.findByPk(object.id);        
+        product = await Product.update({            
+            name: object.name,
+            image: object.image,
+            stock: object.stock,
+            description: object.description,
+            price: object.price,
+            featured: object.featured
+        }, {where: {id: object.id}});
+        return `Producto modificado correctamente`;
     }
 };
