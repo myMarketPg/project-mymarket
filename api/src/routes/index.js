@@ -16,15 +16,7 @@ router.use('/buyers', buyerMiddleware);
 router.use('/categori', categoriMiddleware);
 router.use('/order', orderMiddleware);
 router.use('/products', productMiddleware);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> dev
-
-=======
 router.use('/store', storeMiddleware);
 // router.use('/seller', sellerMiddleware);
->>>>>>> dev
 
 module.exports = router;
