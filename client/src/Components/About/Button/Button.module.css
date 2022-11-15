@@ -5,6 +5,7 @@
     font-size: 15px;    
     color: #fff;
     background-color: #1255ff;
+    border: none;
 }
 .btn:hover{
     color: #fff;
