@@ -33,6 +33,7 @@ export default function SellerManageProducts() {
     useEffect(() => {
         setLocalProducts(allProducts);
     }, [allProducts]);
+
     console.log(allProducts);
     /// RENDER ///
     return (
