@@ -1,12 +1,12 @@
-const { Categori } = require('../../../db');
+const { Category } = require('../../../db');
 
 module.exports = {
     listCategories: async () => {
-        const categories = await Categori.findAll();
+        const categories = await Category.findAll();
         return categories;
     },
-    postCategori: async (name) => {
-        const creatCategori = Categori.create({
+    postCategory: async (name) => {
+        const category = Category.create({
             name: name
         });
     }

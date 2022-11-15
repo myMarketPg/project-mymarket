@@ -3,7 +3,7 @@ const { Router } = require('express');
 
 const adminMiddleware = require('./Admin');
 const buyerMiddleware = require('./Buyer');
-const categoriMiddleware = require('./Categori');
+const categoryMiddleware = require('./Category');
 const orderMiddleware = require('./Order');
 const productMiddleware = require('./Product');
 const storeMiddleware = require('./Store');
@@ -14,7 +14,7 @@ const router = Router();
 // Configuración de los routers
 router.use('/admin', adminMiddleware);
 router.use('/buyers', buyerMiddleware);
-router.use('/categori', categoriMiddleware);
+router.use('/category', categoryMiddleware);
 router.use('/order', orderMiddleware);
 router.use('/products', productMiddleware);
 router.use('/store', storeMiddleware);
