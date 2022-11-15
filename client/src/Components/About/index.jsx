@@ -1,5 +1,5 @@
-import React from 'react';
 import style from './About.module.css';
+import Button from './Button';
 
 export default function About () {
     return (
@@ -14,6 +14,8 @@ export default function About () {
             <p className={style.p}> y la venta de productos en línea.</p>
             <p className={style.p}>Nuestro objetivo es llegar al mayor número de clientes posible,</p>
             <p className={style.p}> ofreciéndoles una solución sencilla y práctica.</p>
+            <br></br>
+            <Button />
         </div>
     )
 }
