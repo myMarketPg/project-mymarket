@@ -1,4 +1,5 @@
 import { Route, BrowserRouter } from "react-router-dom";
+import About from "./Components/About";
 
 import Home from "./Components/Home/Home";
 import Register from "./Components/Registro/Registro";
@@ -9,11 +10,10 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/admin" component={SellerDashboard} />
-        <Route exact path="/registro" component={Register} />
-        <Route exact path="/sobrenosotros" component={Register} />
-        <Route exact path="/login" component={Register} />
+        <Route exact path="/" render={() => <Home />} />
+        <Route exact path="/admin" render={() => <SellerDashboard />} />
+        <Route exact path="/registro" render={() => <Register />} />
+        <Route exact path="/sobrenosotros" render={() => <About />} />
       </div>
     </BrowserRouter>
   );
