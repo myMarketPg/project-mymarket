@@ -1,4 +1,5 @@
 import { Route, BrowserRouter } from "react-router-dom";
+import About from "./Components/About";
 
 import Home from "./Components/Home/Home";
 import Register from "./Components/Registro/Registro";
@@ -12,7 +13,7 @@ function App() {
         <Route exact path="/" render={() => <Home />} />
         <Route exact path="/admin" render={() => <SellerDashboard />} />
         <Route exact path="/registro" render={() => <Register />} />
-        <Route exact path="/sobrenosotros" render={() => <Register />} />
+        <Route exact path="/sobrenosotros" render={() => <About />} />
       </div>
     </BrowserRouter>
   );
