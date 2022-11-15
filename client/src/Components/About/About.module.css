@@ -13,6 +13,11 @@
   color: black;  
   font-size: 50px;
 }
-.p {
+.title {
     margin: 50px 0 15px 50px;
+}
+.p {
+    margin-left: 50px;
+    color: black;
+    font-size: 25px;
 }
