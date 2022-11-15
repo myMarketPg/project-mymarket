@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import DeleteProductModal from "./deleteProductModal";
+import DetailProductModal from "./detailProductModal";
 import EditProductModal from "./editProductModal";
 
 export default function ProductTable({ localProducts }) {
@@ -26,7 +27,17 @@ export default function ProductTable({ localProducts }) {
                         return (
                             <tr key={product.id}>
                                 <td>{product.id}</td>
-                                <td>{product.name}</td>
+                                <td>
+                                    {" "}
+                                    <button
+                                        type="button"
+                                        className="btn btn-light"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#detailProductModal"
+                                    >
+                                        {product.name}
+                                    </button>
+                                </td>
                                 <td>{product.category}</td>
                                 <td>{`$${product.price}`}</td>
                                 <td>{product.stock}</td>
@@ -78,6 +89,7 @@ export default function ProductTable({ localProducts }) {
                                     </button>
                                     <DeleteProductModal id={product.id} />
                                     <EditProductModal />
+                                    <DetailProductModal product={product} />
                                 </td>
                             </tr>
                         );
