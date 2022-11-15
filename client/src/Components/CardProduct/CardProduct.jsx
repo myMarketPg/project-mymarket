@@ -2,15 +2,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function CardProduct({
-  id,
-  name,
-  price,
-  category,
-  image,
-  rating,
-  description,
-}) {
+const CardProduct = ({data, addToCart}) => {
+  let {
+    id,
+    name,
+    price,
+    category,
+    image,
+    rating,
+    description} = data;
+ 
   return (
     <>
       <Link to={"/product/" + id}>
@@ -25,16 +26,14 @@ export default function CardProduct({
             <li className="list-group-item">{category}</li>
             <li className="list-group-item">{rating}</li>
           </ul>
-          <div className="card-body">
-            <a href="#" className="card-link">
-              Comprar
-            </a>
-            <a href="#" className="card-link">
-              Carrito
-            </a>
-          </div>
         </div>
       </Link>
+      <div className="card-body">
+           <button onClick={() => addToCart(id)}>Agregar al carrito</button>
+           <button>Comprar</button>
+      </div>
     </>
   );
-}
+};
+
+export default CardProduct;
