@@ -1,8 +1,14 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function SellerManageContact() {
+    ///DISPATCH///
     const dispatch = useDispatch();
+
+    ///ESTADOS GLOBALES///
+    const { store } = useSelector((state) => state);
+
+    ///ESTALOS LOCALES///
     const [contactForm, setContactForm] = useState({});
 
     return (

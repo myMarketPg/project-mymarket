@@ -76,7 +76,7 @@ export default function ProductTable({ localProducts }) {
                                             ></path>
                                         </svg>
                                     </button>
-                                    <DeleteProductModal />
+                                    <DeleteProductModal id={product.id} />
                                     <EditProductModal />
                                 </td>
                             </tr>
