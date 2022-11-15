@@ -29,11 +29,11 @@ export default function SellerManageProducts() {
     useEffect(() => {
         dispatch(getAllProducts());
     }, []);
-
+    /*
     useEffect(() => {
         setLocalProducts(allProducts);
     }, [allProducts]);
-
+*/
     console.log(allProducts);
 
     /// RENDER ///
