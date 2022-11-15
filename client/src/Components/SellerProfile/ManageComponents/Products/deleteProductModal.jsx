@@ -1,6 +1,23 @@
 import React, { useState } from "react";
+import { deleteProduct, getAllProducts } from "../../../../Redux/actions";
+import { useDispatch, useSelector } from "react-redux";
 
-export default function DeleteProductModal() {
+export default function DeleteProductModal({ id }) {
+    ///DISPATCH///
+    const dispatch = useDispatch();
+
+    ///ESTADO LOCAL////
+    const [success, setSuccess] = useState();
+
+    /////Event Handler/////
+
+    function handleDelete(e) {
+        e.preventDefault();
+        dispatch(deleteProduct(id));
+        alert("Product Deleted!");
+        dispatch(getAllProducts());
+    }
+
     return (
         <div
             className="modal fade "
@@ -34,7 +51,13 @@ export default function DeleteProductModal() {
                         >
                             Close
                         </button>
-                        <button type="button" className="btn btn-danger">
+                        <button
+                            type="button"
+                            className="btn btn-danger"
+                            onClick={(e) => {
+                                handleDelete(e);
+                            }}
+                        >
                             Delete Product
                         </button>
                     </div>

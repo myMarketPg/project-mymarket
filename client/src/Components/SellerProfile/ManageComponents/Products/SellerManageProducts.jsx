@@ -35,6 +35,7 @@ export default function SellerManageProducts() {
     }, [allProducts]);
 
     console.log(allProducts);
+
     /// RENDER ///
     return (
         <div>
