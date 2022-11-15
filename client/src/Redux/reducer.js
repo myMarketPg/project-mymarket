@@ -1,11 +1,11 @@
 const intialState = {
-    buyers: [],
+    allDuyers: [],
     buyerDetail: {},
-    products: [],
+    allProducts: [],
     productDetail: {},
-    categories: [],
+    allCategories: [],
     categoryDetail: {},
-    orders: [],
+    allOrders: [],
     orderDetail: {},
     admin: [],
     store: [],
@@ -38,8 +38,8 @@ export const rootReducer = (state = intialState, action) => {
         case "UPDATE_PRODUCT":
             return {
                 ...state,
-                productDetail: action.payload
-            }
+                productDetail: action.payload,
+            };
         //BUYERS
         case "GET_ALL_BUYERS":
             return {
@@ -49,19 +49,19 @@ export const rootReducer = (state = intialState, action) => {
         case "GET_BUYER_DETAIL":
             return {
                 ...state,
-                buyerDetail: action.payload
-            }
+                buyerDetail: action.payload,
+            };
         case "UPDATE_BUYER":
             return {
                 ...state,
-                buyerDetail: action.payload
-            }
+                buyerDetail: action.payload,
+            };
         //ADMIN
         case "GET_ADMIN":
             return {
                 ...state,
-                admin: action.payload
-            }
+                admin: action.payload,
+            };
         case "UPDATE_ADMIN":
             return {
                 ...state,
@@ -72,17 +72,17 @@ export const rootReducer = (state = intialState, action) => {
             return {
                 ...state,
                 categories: action.payload,
-            }
+            };
         case "GET_CATEGORY_DETAIL":
             return {
                 ...state,
-                categoryDetail: action.payload
-            }
+                categoryDetail: action.payload,
+            };
         case "UPDATE_CATEGORY":
             return {
                 ...state,
-                categoryDetail: action.payload
-            }
+                categoryDetail: action.payload,
+            };
         //ORDER
         case "GET_ALL_ORDERS":
             return {
@@ -92,13 +92,13 @@ export const rootReducer = (state = intialState, action) => {
         case "GET_ORDER_DETAIL":
             return {
                 ...state,
-                orderDetail: action.payload
-            }
+                orderDetail: action.payload,
+            };
         case "UPDATE_ORDER":
             return {
                 ...state,
-                orderDetail: action.payload
-            }
+                orderDetail: action.payload,
+            };
         default:
             return state;
     }

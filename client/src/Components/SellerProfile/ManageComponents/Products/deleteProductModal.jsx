@@ -5,7 +5,7 @@ export default function DeleteProductModal() {
         <div
             className="modal fade "
             id="deleteProductModal"
-            tabindex="-1"
+            tabIndex="-1"
             aria-labelledby="deleteProductModalLabel"
             aria-hidden="true"
         >

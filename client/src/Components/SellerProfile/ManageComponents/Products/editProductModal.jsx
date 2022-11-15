@@ -5,7 +5,7 @@ export default function EditProductModal() {
         <div
             className="modal fade "
             id="editProductModal"
-            tabindex="-1"
+            tabIndex="-1"
             aria-labelledby="editProductModalLabel"
             aria-hidden="true"
         >
