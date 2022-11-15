@@ -13,7 +13,7 @@ router.get('/', async(req, res) => {
 
 router.post('/', async(req, res) => {
     const {userName, password} = req.body;
-    if(!name || !password) {
+    if(!userName || !password) {
         res.status(400).json({info: 'falta ingresar un dato'})
     }
     try {
@@ -23,5 +23,16 @@ router.post('/', async(req, res) => {
         alert('Hubo un problema', error);
     }
 });
+
+router.put('/:id', async(req, res) => {
+    const {id} = req.params;
+    const {userName, password} = req.body;
+    try {
+        controller.putAdmin(id, userName, password);
+        res.status(200).send('Datos actualizados');
+    } catch (error) {
+        alert('Hubo un problema', error);
+    }
+})
 
 module.exports = router;

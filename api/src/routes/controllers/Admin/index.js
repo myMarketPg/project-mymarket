@@ -10,5 +10,16 @@ module.exports = {
             userName: userName,
             password: password
         });
+    },
+    putAdmin: async (id, userName, password) => {
+        let admin = await Admin.findOne({
+            where: {
+                id: id
+            }
+        });
+        await admin.update({
+            userName: userName,
+            password: password
+        })
     }
 }
