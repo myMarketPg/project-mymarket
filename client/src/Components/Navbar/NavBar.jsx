@@ -1,8 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { getAllCategories } from "../../Redux/actions";
+import { useDispatch, useSelector } from "react-redux";
 
-export default function NavBar() {
+export default function NavBar({ localProducts }) {
+  ///DISPATCH///
+  const dispatch = useDispatch();
+
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
@@ -23,49 +28,32 @@ export default function NavBar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
               <Link to="/sobrenosotros">
                 <a className="nav-link" href="#">
                   Sobre nosotros
                 </a>
               </Link>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Categorias
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Tecnologia
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Moda
-                  </a>
-                </li>
-                <li></li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Salud
-                  </a>
-                </li>
-              </ul>
+            <li className="nav-item">
+              <Link to="/contacto">
+                <a className="nav-link" href="#">
+                  Contacto
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
               <Link to="/registro">
                 <a className="nav-link">Registrate</a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/registro">
+                <a className="nav-link">Registrate</a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/login">
+                <a className="nav-link">Tu Cuenta</a>
               </Link>
             </li>
           </ul>

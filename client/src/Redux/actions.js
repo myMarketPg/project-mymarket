@@ -88,7 +88,7 @@ export const updateProduct = (payload, id) => {
 export const deleteProduct = (id) => {
     return async function () {
         try {
-            const data = await axios.delete(`http://localhost:3001/api/product${id}`)
+            const data = await axios.delete(`http://localhost:3001/api/products/${id}`)
             return data
         } catch (error) {
             console.log(error)
@@ -152,7 +152,7 @@ export const updateBuyer = (payload, id) => {
 export const deleteBuyer = (id) => {
     return async function () {
         try {
-            const data = await axios.delete(`http://localhost:3001/api/buyers${id}`)
+            const data = await axios.delete(`http://localhost:3001/api/buyers/${id}`)
             return data
         } catch (error) {
             console.log(error)
