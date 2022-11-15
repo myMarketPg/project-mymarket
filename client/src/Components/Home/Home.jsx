@@ -52,23 +52,18 @@ export default function Home() {
                   {localProducts?.map((product) => {
                     return (
                       <div key={product.id}>
-                        <Link to={"/product/" + product.id}>
-                          <CardProduct
-                            id={product.id}
-                            name={product.name}
-                            image={product.image}
-                            description={product.description}
-                            price={product.price}
-                            category={product.category}
-                            rating={product.rating}
-                          ></CardProduct>
-                        </Link>
+                        <CardProduct
+                          id={product.id}
+                          name={product.name}
+                          image={product.image}
+                          description={product.description}
+                          price={product.price}
+                          category={product.category}
+                          rating={product.rating}
+                        ></CardProduct>
                       </div>
                     );
                   })}
-                  <div class="col">Column</div>
-                  <div class="col">Column</div>
-                  <div class="col">Column</div>
                 </div>
               </div>
             </div>

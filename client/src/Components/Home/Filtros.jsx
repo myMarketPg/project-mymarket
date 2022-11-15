@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllCategories } from "../../Redux/actions";
+import "../../styles/Components/_Filtros.scss";
 
 export default function Filtros({ localProducts }) {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ export default function Filtros({ localProducts }) {
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav navbar-center">
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -106,6 +107,52 @@ export default function Filtros({ localProducts }) {
                   <li>
                     <a className="dropdown-item" href="#">
                       Z-A
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Precio
+                </a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Mayor a Menor
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Menor a Mayor
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Fecha
+                </a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Antiguo a Reciente
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Reciente a Antiguo
                     </a>
                   </li>
                 </ul>
