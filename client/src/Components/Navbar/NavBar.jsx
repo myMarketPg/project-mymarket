@@ -8,26 +8,6 @@ export default function NavBar({ localProducts }) {
   ///DISPATCH///
   const dispatch = useDispatch();
 
-  ///ESTADO GLOBAL///
-  const { allCategories } = useSelector((state) => state);
-
-  ///ESTADO GLOBAL///
-  const [localCategories, setLocalCategories] = useState([
-    {
-      id: 1,
-      name: "Remeras",
-    },
-  ]);
-
-  ///HOOKS///
-  useEffect(() => {
-    dispatch(getAllCategories());
-  }, [dispatch]);
-
-  useEffect(() => {
-    setLocalCategories(localCategories);
-  }, [localCategories]);
-
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
@@ -57,7 +37,7 @@ export default function NavBar({ localProducts }) {
             <li className="nav-item">
               <Link to="/contacto">
                 <a className="nav-link" href="#">
-                  Contanto
+                  Contacto
                 </a>
               </Link>
             </li>

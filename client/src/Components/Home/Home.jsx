@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import NavBar from "../Navbar/NavBar.jsx";
 import CardProduct from "../CardProduct/CardProduct.jsx";
 import Filtros from "./Filtros";
+import Carrusel from "./Carrusel/Carrusel.jsx";
 
 export default function Home() {
   ///DISPATCH///
@@ -43,9 +44,7 @@ export default function Home() {
       <div className="Home_container">
         <div className="row_container">
           <div className="row">
-            <div className="col">
-              <h1 className="col-h1">Bienvenido a My Market!</h1>
-            </div>
+            <Carrusel />
             <Filtros localProducts={localProducts} />
             <div className="products-container">
               <div class="container text-center">

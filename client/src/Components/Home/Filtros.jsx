@@ -30,17 +30,6 @@ export default function Filtros({ localProducts }) {
     <>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
               <li className="nav-item dropdown">
@@ -76,15 +65,49 @@ export default function Filtros({ localProducts }) {
                   Talles
                 </a>
                 <ul className="dropdown-menu">
-                  {localCategories?.map((category) => {
-                    return (
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          {category.name}
-                        </a>
-                      </li>
-                    );
-                  })}
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      XL
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      L
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      S
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      XS
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Order Alfabetico
+                </a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      A-Z
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Z-A
+                    </a>
+                  </li>
                 </ul>
               </li>
             </ul>
