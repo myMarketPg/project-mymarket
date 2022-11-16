@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Auth0Provider } from "@auth0/auth0-react";
 import "./styles/styles.scss";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
@@ -9,11 +10,16 @@ import store from "./Redux/store";
 
 ReactDOM.render(
     <React.StrictMode>
-        <Provider store={store}>
+        <Auth0Provider 
+        domain="dev-8h8kspbxbki6dnin.us.auth0.com" 
+        clientId="UKSiHHCH1BkiKREwLVVREf2VM4vvZ9o7" 
+        redirectUri={window.location.origin}>
+         <Provider store={store}>
             <BrowserRouter>
                 <App />
             </BrowserRouter>
-        </Provider>
+         </Provider>
+        </Auth0Provider>
     </React.StrictMode>,
     document.getElementById("root")
 );
