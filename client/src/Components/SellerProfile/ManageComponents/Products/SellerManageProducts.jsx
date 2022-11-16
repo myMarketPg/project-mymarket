@@ -22,6 +22,7 @@ export default function SellerManageProducts() {
             price: 1200,
             stock: 50,
             sales: 15,
+            active: true,
         },
     ]);
 
