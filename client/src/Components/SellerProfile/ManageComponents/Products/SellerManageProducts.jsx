@@ -15,12 +15,14 @@ export default function SellerManageProducts() {
     /// ESTADOS LOCAL ///
     const [localProducts, setLocalProducts] = useState([
         {
-            id: 1,
-            name: "Remera Blanca Lisa",
-            img: "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
-            category: "Remeras",
+            id: 16565464684654656546546546546,
+            name: "Gibson SG",
+            brand: "Gibson",
+            model: "SG Standard",
+            img: "https://http2.mlstatic.com/D_NQ_NP_626544-MLA47691080756_092021-W.jpg",
+            category: "Guitarras",
             price: 1200,
-            description: "Una remera muy buena y linda",
+            description: "La guitarra de Angus Young",
             stock: 50,
             sales: 15,
             active: true,
