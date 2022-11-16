@@ -28,7 +28,7 @@ export default function ManageProductsNavabar() {
                         aria-label="All"
                         defaultValue="All"
                     >
-                        <option selected>All</option>
+                        <option>All</option>
                         <option value="1">Calzado</option>
                         <option value="2">Remeras</option>
                         <option value="3">Pantalones</option>
@@ -38,7 +38,7 @@ export default function ManageProductsNavabar() {
                 <label className="text-white">ORDER BY:</label>
                 <form>
                     <select className="form-select d-flex" aria-label="-">
-                        <option selected>Open this select menu</option>
+                        <option>Open this select menu</option>
                         <option value="1">A-Z</option>
                         <option value="2">Z-A</option>
                         <option value="3">Price Asc</option>
