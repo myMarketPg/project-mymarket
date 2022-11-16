@@ -331,6 +331,7 @@ export const deleteOrder = (id) => {
 
 /////----CARRITO DE COMPRAS----/////
 export const TYPES = {
+<<<<<<< HEAD
     ADD_TO_CART:  "ADD_TO_CART",
     REMOVE_ONE_FROM_CART:"REMOVE_ONE_FROM_CART",
     REMOVE_ALL_FROM_CART:"REMOVE_ALL_FROM_CART",
@@ -338,3 +339,12 @@ export const TYPES = {
 };
 
 /////-----FILTROS-----/////
+=======
+    ADD_TO_CART: "ADD_TO_CART",
+    REMOVE_ONE_FROM_CART: "REMOVE_ONE_FROM_CART",
+    REMOVE_ALL_FROM_CART: "REMOVE_ALL_FROM_CART",
+    CLEAR_CART: "CLEAR_CART"
+};
+
+/////-----FILTROS-----/////
+>>>>>>> dev

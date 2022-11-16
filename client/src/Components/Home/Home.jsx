@@ -28,11 +28,45 @@ export default function Home() {
       sales: 15,
 =======
       price: 1200,
-      category: "Remera",
+      category: "Remeras",
       image:
         "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
       rating: 1,
       description: "hola",
+      addToCart: 1,
+    },
+    {
+      id: 2,
+      name: "Pantalon Blanco",
+      price: 1200,
+      category: "Pantalones",
+      image:
+        "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
+      rating: 1,
+      description: "hola",
+      addToCart: 2,
+    },
+    {
+      id: 3,
+      name: "Zapatilla marron",
+      price: 1200,
+      category: "Calzado",
+      image:
+        "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
+      rating: 1,
+      description: "hola",
+      addToCart: 3,
+    },
+    {
+      id: 4,
+      name: "Campera",
+      price: 1200,
+      category: "Abrigo",
+      image:
+        "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
+      rating: 1,
+      description: "hola",
+<<<<<<< HEAD
       addToCart: 1,
     },
     {
@@ -45,39 +79,9 @@ export default function Home() {
       rating: 1,
       description: "hola",
       addToCart: 1,
-    },
-    {
-      id: 1,
-      name: "Remera Blanca Lisa",
-      price: 1200,
-      category: "Remera",
-      image:
-        "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
-      rating: 1,
-      description: "hola",
-      addToCart: 1,
-    },
-    {
-      id: 1,
-      name: "Remera Blanca Lisa",
-      price: 1200,
-      category: "Remera",
-      image:
-        "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
-      rating: 1,
-      description: "hola",
-      addToCart: 1,
-    },
-    {
-      id: 1,
-      name: "Remera Blanca Lisa",
-      price: 1200,
-      category: "Remera",
-      image:
-        "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
-      rating: 1,
-      description: "hola",
-      addToCart: 1,
+>>>>>>> dev
+=======
+      addToCart: 4,
 >>>>>>> dev
     },
   ]);

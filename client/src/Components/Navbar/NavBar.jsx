@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import LoginButton from "../Auth/LoginButton";
 import Profile from "../Auth/Profile";
 import LogoutButton from "../Auth/LogoutButton";
-import { useAuth0 } from '@auth0/auth0-react'
+import { useAuth0 } from "@auth0/auth0-react";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function NavBar({ localProducts }) {
@@ -46,6 +46,7 @@ export default function NavBar({ localProducts }) {
                 </a>
               </Link>
             </li>
+<<<<<<< HEAD
             <li className="nav-item">
               <Link to="/registro">
                 <a className="nav-link">Registrate</a>
@@ -64,15 +65,17 @@ export default function NavBar({ localProducts }) {
                 <a className="nav-link">Tu Cuenta</a>
               </Link>
             </li>
+=======
+>>>>>>> dev
           </ul>
-          { isAuthenticated? (
-          <>
-          <Profile />
-          <LogoutButton />
-          </>
-          )
-          :
-          (<LoginButton />)}
+          {isAuthenticated ? (
+            <>
+              <Profile />
+              <LogoutButton />
+            </>
+          ) : (
+            <LoginButton />
+          )}
           <form className="d-flex" role="search">
             <input
               className="form-control me-2"

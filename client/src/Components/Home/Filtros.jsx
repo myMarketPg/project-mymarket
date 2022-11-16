@@ -18,6 +18,14 @@ export default function Filtros({ localProducts }) {
       id: 1,
       name: "Remeras",
     },
+    {
+      id: 2,
+      name: "Pantalones",
+    },
+    {
+      id: 3,
+      name: "Calzado",
+    },
   ]);
 
   ///HOOKS///
@@ -29,11 +37,17 @@ export default function Filtros({ localProducts }) {
     setLocalCategories(localCategories);
   }, [localCategories]);
 
+  ///FUNCIONES PARA LOS FILTROS
+  function handleHomeFilterByCategory(e) {
+    e.preventDefault(e);
+  }
+
   //RENDER
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-dark">
         <div className="container-fluid">
+<<<<<<< HEAD
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
 <<<<<<< HEAD
             <ul className="navbar-nav">
@@ -247,6 +261,35 @@ export default function Filtros({ localProducts }) {
             </div>
 >>>>>>> dev
           </div>
+=======
+          <label className="text-white" style={{ paddingLeft: "100px" }}>
+            Categorias:
+          </label>
+          <form>
+            <select
+              onChange={(e) => handleHomeFilterByCategory(e)}
+              className="form-select"
+              aria-label="All"
+              defaultValue="All"
+            >
+              <option selected>Todas</option>
+              {localCategories?.map((category) => {
+                return <option value={category.id}>{category.name}</option>;
+              })}
+            </select>
+          </form>
+          <label className="text-white">Ordernar por:</label>
+          <form>
+            <select className="form-select d-flex" aria-label="-">
+              <option selected>Predeterminado</option>
+              <option value="1">A-Z</option>
+              <option value="2">Z-A</option>
+              <option value="3">Mayor Precio a Menor Precio</option>
+              <option value="5">Menor Precio a Mayor Precio</option>
+              <option value="7">Mas vendidos</option>
+            </select>
+          </form>
+>>>>>>> dev
         </div>
       </nav>
     </>
