@@ -13,8 +13,8 @@ function App() {
         <Route exact path="/" render={() => <Home />} />
         <Route exact path="/product/:id" render={() => <CardProduct />} />
         <Route exact path="/admin" render={() => <SellerDashboard />} />
-        <Route exact path="/registro" render={() => <Register />} />
         <Route exact path="/sobrenosotros" render={() => <About />} />
+        <Route exact path="/contacto" render={() => <About />} />
       </div>
     </BrowserRouter>
   );
