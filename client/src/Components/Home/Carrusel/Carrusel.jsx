@@ -2,6 +2,10 @@ import React from "react";
 import imagen1 from "./carrusel1.jpg";
 import imagen2 from "./carrusel2.jpg";
 import imagen3 from "./carrusel3.jpg";
+<<<<<<< HEAD
+=======
+import "../../../styles/Components/_Carrusel.scss";
+>>>>>>> dev
 
 export default function Carrusel() {
   return (

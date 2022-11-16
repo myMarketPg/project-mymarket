@@ -39,8 +39,8 @@ const { Buyer, Category, Product, Order, Variant } = sequelize.models;
 Category.hasMany(Product);
 Product.belongsTo(Category);
 
-Buyer.hasMany(Order);
-Order.belongsTo(Buyer);
+//Buyer.hasMany(Order);
+//Order.belongsTo(Buyer);
 
 Product.belongsToMany(Variant, { through: 'Product_Variant'});
 Variant.belongsToMany(Product, { through: 'Product_Variant'});

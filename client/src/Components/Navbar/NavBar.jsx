@@ -52,11 +52,14 @@ export default function NavBar({ localProducts }) {
               </Link>
             </li>
             <li className="nav-item">
+<<<<<<< HEAD
               <Link to="/registro">
                 <a className="nav-link">Registrate</a>
               </Link>
             </li>
             <li className="nav-item">
+=======
+>>>>>>> dev
               <Link to="/login">
                 <a className="nav-link">Tu Cuenta</a>
               </Link>
