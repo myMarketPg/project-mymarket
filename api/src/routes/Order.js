@@ -24,19 +24,19 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async(req, res) => {
-    const {date, totalAmount, state} = req.body;
-    if(!date|| !totalAmount || !state) {
+    const {date, totalAmount, state, productId} = req.body;
+    if(!date|| !totalAmount || !state || !productId) {
         res.status(400).json({info: 'falta ingresar un dato'})
     }
     try {
-        controllers.posOrder(date, totalAmount, state);
+        controllers.postOrder(date, totalAmount, state, productId);
         res.status(200).send('Comprador agregado');
     } catch (error) {
         alert('Hubo un problema', error);
     }
 });
 
-router.put('/product/:id', (req, res) => {
+router.put('/:id', (req, res) => {
     const {id} = req.params;
     const { date, totalAmount, state } = req.body;
 
