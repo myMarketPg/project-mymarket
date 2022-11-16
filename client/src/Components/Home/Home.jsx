@@ -19,12 +19,13 @@ export default function Home() {
     {
       id: 1,
       name: "Remera Blanca Lisa",
+      price: 1200,
+      category: "Remera",
       image:
         "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
-      category: "Remeras",
-      price: 1200,
-      stock: 50,
-      sales: 15,
+      rating: 1,
+      description: "hola",
+      addToCart: 1,
     },
   ]);
 
@@ -47,8 +48,8 @@ export default function Home() {
             <Carrusel />
             <Filtros localProducts={localProducts} />
             <div className="products-container">
-              <div class="container text-center">
-                <div class="row">
+              <div className="container text-center">
+                <div className="row">
                   {localProducts?.map((product) => {
                     return (
                       <div key={product.id}>
@@ -60,6 +61,7 @@ export default function Home() {
                           price={product.price}
                           category={product.category}
                           rating={product.rating}
+                          addToCart={product.id}
                         ></CardProduct>
                       </div>
                     );

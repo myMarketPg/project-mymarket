@@ -46,7 +46,7 @@ export default function Filtros({ localProducts }) {
                 <ul className="dropdown-menu">
                   {localCategories?.map((category) => {
                     return (
-                      <li>
+                      <li key={category.id}>
                         <a className="dropdown-item" href="#">
                           {category.name}
                         </a>

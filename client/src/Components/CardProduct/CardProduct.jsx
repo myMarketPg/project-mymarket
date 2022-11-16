@@ -1,17 +1,16 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CardProduct = ({data, addToCart}) => {
-  let {
-    id,
-    name,
-    price,
-    category,
-    image,
-    rating,
-    description} = data;
- 
+export default function CardProduct(
+  id,
+  name,
+  price,
+  category,
+  image,
+  rating,
+  description,
+  addToCart
+) {
   return (
     <>
       <Link to={"/product/" + id}>
@@ -29,11 +28,9 @@ const CardProduct = ({data, addToCart}) => {
         </div>
       </Link>
       <div className="card-body">
-           <button onClick={() => addToCart(id)}>Agregar al carrito</button>
-           <button>Comprar</button>
+        <button onClick={() => addToCart(id)}>Agregar al carrito</button>
+        <button>Comprar</button>
       </div>
     </>
   );
-};
-
-export default CardProduct;
+}
