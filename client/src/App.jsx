@@ -1,6 +1,6 @@
 import { Route, BrowserRouter } from "react-router-dom";
 import About from "./Components/About";
-import CardProduct from "./Components/CardProduct/CardProduct";
+import ProductDetail from "./Components/ProductDetail/ProductDetail";
 //momentaneamente, dsps lo cambiamos por el detail cuando este hecho el componente
 import Home from "./Components/Home/Home";
 import Register from "./Components/Registro/Registro";
@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <div>
         <Route exact path="/" render={() => <Home />} />
-        <Route exact path="/product/:id" render={() => <CardProduct />} />
+        <Route exact path="/product/:id" render={() => <ProductDetail />} />
         <Route exact path="/admin" render={() => <SellerDashboard />} />
         <Route exact path="/registro" render={() => <Register />} />
         <Route exact path="/sobrenosotros" render={() => <About />} />
