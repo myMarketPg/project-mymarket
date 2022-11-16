@@ -13,8 +13,13 @@ function App() {
         <Route exact path="/" render={() => <Home />} />
         <Route exact path="/product/:id" render={() => <ProductDetail />} />
         <Route exact path="/admin" render={() => <SellerDashboard />} />
+<<<<<<< HEAD
+        <Route exact path="/registro" render={() => <Register />} />
+        <Route exact path="/sobrenosotros" render={() => <About />} />
+=======
         <Route exact path="/sobrenosotros" render={() => <About />} />
         <Route exact path="/contacto" render={() => <About />} />
+>>>>>>> dev
       </div>
     </BrowserRouter>
   );

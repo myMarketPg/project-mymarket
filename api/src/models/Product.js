@@ -17,11 +17,7 @@ module.exports = (sequelize) => {
     image: {
         type: DataTypes.STRING,
         allowNull: false
-    },
-    stock: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
+    },    
     description: {
       type: DataTypes.STRING,
       allowNull:false
@@ -30,9 +26,9 @@ module.exports = (sequelize) => {
         type: DataTypes.DECIMAL,
         allowNull: false
     },
-    featured: {      
+    active: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false,
+      defaultValue: true,
       allowNull: false
     },
   },
