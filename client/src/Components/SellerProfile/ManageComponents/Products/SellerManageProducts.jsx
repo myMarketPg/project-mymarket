@@ -20,6 +20,7 @@ export default function SellerManageProducts() {
             img: "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
             category: "Remeras",
             price: 1200,
+            description: "Una remera muy buena y linda",
             stock: 50,
             sales: 15,
             active: true,
