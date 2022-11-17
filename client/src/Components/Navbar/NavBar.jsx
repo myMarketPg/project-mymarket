@@ -55,7 +55,6 @@ export default function NavBar({ localProducts }) {
           {isAuthenticated ? (
             <>
               <Profile />
-              <LogoutButton />
             </>
           ) : (
             <LoginButton />

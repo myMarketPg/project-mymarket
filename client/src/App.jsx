@@ -5,6 +5,7 @@ import ProductDetail from "./Components/ProductDetail/ProductDetail";
 import Home from "./Components/Home/Home";
 import Register from "./Components/Registro/Registro";
 import SellerDashboard from "./Components/SellerProfile/SellerDashboard";
+import BuyerProfile from "./Components/BuyerProfile/BuyerProfile";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/admin" render={() => <SellerDashboard />} />
         <Route exact path="/sobrenosotros" render={() => <About />} />
         <Route exact path="/contacto" render={() => <About />} />
+        <Route exact path="/user/:id" render={() => <BuyerProfile />} />
       </div>
     </BrowserRouter>
   );

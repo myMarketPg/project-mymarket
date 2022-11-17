@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -11,11 +12,13 @@ const Profile = () => {
   return (
     isAuthenticated && (
       <div>
-        <img
-          src={user.picture}
-          alt={user.name}
-          className="rounded-circle img-sm"
-        />
+        <Link to="/user/:id">
+          <img
+            src={user.picture}
+            alt={user.name}
+            className="rounded-circle img-sm"
+          />
+        </Link>
       </div>
     )
   );

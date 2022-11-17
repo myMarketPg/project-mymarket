@@ -337,5 +337,4 @@ export const TYPES = {
     CLEAR_CART: "CLEAR_CART"
 };
 
-
 /////-----FILTROS-----/////
