@@ -8,6 +8,8 @@ import Filtros from "./Filtros";
 import Carrusel from "./Carrusel/Carrusel.jsx";
 import Footer from "../Footer/footer.jsx";
 
+//import ShoppingCart from "../ShoppingCart/ShoppingCart.jsx";
+
 export default function Home() {
   ///DISPATCH///
   const dispatch = useDispatch();

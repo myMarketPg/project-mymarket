@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function CardProduct(data) {
-  const { id, name, price, category, image, rating, description, addToCart } =
+
+export default function CardProduct(data, addToCart) {
+  const { id, name, price, category, image, rating, description } =
     data;
+    
   return (
     <>
       <div className="card" style={{ width: "18rem" }}>
@@ -20,7 +22,7 @@ export default function CardProduct(data) {
           </ul>
         </Link>
         <div className="card-body">
-          <button onClick={() => addToCart(id)}>Agregar al carrito</button>
+          <button onClick={() => addToCart(addToCart)}>Agregar al carrito</button>
           <button>Comprar</button>
         </div>
       </div>
