@@ -8,6 +8,10 @@ export default function CategoryTable({ localCategories }) {
     //DISPATCH //
     const dispatch = useDispatch();
 
+    ////ESTADO GLOBAL/////
+    const { allCategories } = useSelector((state) => state);
+    console.log(allCategories);
+
     return (
         <div className="table-responsive">
             <table className="table table-hover ">

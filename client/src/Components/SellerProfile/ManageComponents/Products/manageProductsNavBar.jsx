@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import CreateProductModal from "./createProductModal";
 
-export default function ManageProductsNavabar() {
+export default function ManageProductsNavabar({
+    localCategories,
+    localProduts,
+}) {
     ////ESTADOS LOCALES//////
     const [localOrder, setLocalOrder] = useState();
-    const [localCategories, setLocalCategories] = useState();
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-dark">
@@ -57,7 +59,7 @@ export default function ManageProductsNavabar() {
                 >
                     Add Product +
                 </button>
-                <CreateProductModal />
+                <CreateProductModal localCategories={localCategories} />
             </div>
         </nav>
     );
