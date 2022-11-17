@@ -1,4 +1,4 @@
-import { getAllProducts } from "../../../../Redux/actions";
+import { getAllCategories, getAllProducts } from "../../../../Redux/actions";
 import React, { Fragment, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ManageProductsNavabar from "./manageProductsNavBar";
@@ -11,6 +11,7 @@ export default function SellerManageProducts() {
     ///ESTADOS GLOBALES///
 
     const { allProducts } = useSelector((state) => state);
+    const { allCategories } = useSelector((state) => state);
 
     /// ESTADOS LOCAL ///
     const [localProducts, setLocalProducts] = useState([
@@ -28,16 +29,21 @@ export default function SellerManageProducts() {
             active: true,
         },
     ]);
+    const [localCategories, setLocalCategories] = useState([]);
 
     /// HOOKS //
     useEffect(() => {
         dispatch(getAllProducts());
+        dispatch(getAllCategories());
     }, []);
-    /*
+
     useEffect(() => {
         setLocalProducts(allProducts);
     }, [allProducts]);
-*/
+    useEffect(() => {
+        setLocalCategories(allCategories);
+    }, [allCategories]);
+
     console.log(allProducts);
 
     /// RENDER ///
@@ -47,6 +53,7 @@ export default function SellerManageProducts() {
                 <ManageProductsNavabar
                     localProducts={localProducts}
                     setLocalProducts={setLocalProducts}
+                    localCategories={localCategories}
                 />
             </div>
             <div>

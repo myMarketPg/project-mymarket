@@ -39,7 +39,7 @@ export const getAllProducts = () => {
             const data = await axios.get("http://localhost:3001/api/products");
             dispatch({
                 type: "GET_ALL_PRODUCTS",
-                payload: data.data,
+                payload: data.data.products,
             });
         } catch (error) {
             console.log(error);
@@ -63,17 +63,24 @@ export const getProductDetail = (id) => {
     };
 };
 
-export const postProduct = (payload) => {
-    return async function () {
-        try {
-            const data = await axios.post(
-                "http://locahost:3001/api/products",
-                payload
-            );
-            return data;
-        } catch (error) {
-            console.log(error);
-        }
+export const postProduct = (newProduct) => {
+    return async function (dispatch) {
+        return axios
+            .post("http://localhost:3001/api/products", {
+                name: newProduct.name,
+                model: newProduct.model,
+                brand: newProduct.brand,
+                description: newProduct.description,
+                stock: newProduct.stock,
+                price: newProduct.price,
+                category: newProduct.category,
+                active: newProduct.active,
+                image: newProduct.image,
+            })
+            .then((json) =>
+                dispatch({ type: "POST_PRODUCT", payload: json.data })
+            )
+            .catch((error) => console.log(error));
     };
 };
 
