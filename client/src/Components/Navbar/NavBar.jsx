@@ -55,6 +55,7 @@ export default function NavBar({ localProducts }) {
           ) : (
             <LoginButton />
           )}
+
           <form className="d-flex" role="search">
             <input
               className="form-control me-2"

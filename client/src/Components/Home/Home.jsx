@@ -6,6 +6,7 @@ import NavBar from "../Navbar/NavBar.jsx";
 import CardProduct from "../CardProduct/CardProduct.jsx";
 import Filtros from "./Filtros";
 import Carrusel from "./Carrusel/Carrusel.jsx";
+import Footer from "../Footer/footer.jsx";
 
 export default function Home() {
   ///DISPATCH///
@@ -102,6 +103,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <Footer />
           </div>
         </div>
       </div>

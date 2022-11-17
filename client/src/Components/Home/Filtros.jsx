@@ -42,11 +42,9 @@ export default function Filtros({ localProducts }) {
   //RENDER
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-        <div className="container-fluid">
-          <label className="text-white" style={{ paddingLeft: "100px" }}>
-            Categorias:
-          </label>
+      <nav className="navbar navbar-expand-lg navbar-light bg-dark ">
+        <div className="container-fluid d-flex justify-content-center">
+          <label className="text-white">Categorias:</label>
           <form>
             <select
               onChange={(e) => handleHomeFilterByCategory(e)}
@@ -60,7 +58,9 @@ export default function Filtros({ localProducts }) {
               })}
             </select>
           </form>
-          <label className="text-white">Ordernar por:</label>
+          <label className="text-white" style={{ marginLeft: "100px" }}>
+            Ordernar por:
+          </label>
           <form>
             <select className="form-select d-flex" aria-label="-">
               <option selected>Predeterminado</option>
