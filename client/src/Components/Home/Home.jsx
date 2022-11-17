@@ -6,6 +6,7 @@ import NavBar from "../Navbar/NavBar.jsx";
 import CardProduct from "../CardProduct/CardProduct.jsx";
 import Filtros from "./Filtros";
 import Carrusel from "./Carrusel/Carrusel.jsx";
+import Footer from "../Footer/footer.jsx";
 
 export default function Home() {
   ///DISPATCH///
@@ -19,14 +20,12 @@ export default function Home() {
     {
       id: 1,
       name: "Remera Blanca Lisa",
-<<<<<<< HEAD
       image:
         "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
       category: "Remeras",
       price: 1200,
       stock: 50,
       sales: 15,
-=======
       price: 1200,
       category: "Remeras",
       image:
@@ -66,7 +65,6 @@ export default function Home() {
         "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
       rating: 1,
       description: "hola",
-<<<<<<< HEAD
       addToCart: 1,
     },
     {
@@ -79,10 +77,7 @@ export default function Home() {
       rating: 1,
       description: "hola",
       addToCart: 1,
->>>>>>> dev
-=======
       addToCart: 4,
->>>>>>> dev
     },
   ]);
 
@@ -101,34 +96,11 @@ export default function Home() {
       <NavBar localProducts={localProducts} />
       <div className="Home_container">
         <div className="row_container">
+          r
           <div className="row">
             <Carrusel />
             <Filtros localProducts={localProducts} />
             <div className="products-container">
-<<<<<<< HEAD
-              <div class="container text-center">
-                <div class="row">
-                  {localProducts?.map((product) => {
-                    return (
-                      <div key={product.id}>
-                        <Link to={"/product/" + product.id}>
-                          <CardProduct
-                            id={product.id}
-                            name={product.name}
-                            image={product.image}
-                            description={product.description}
-                            price={product.price}
-                            category={product.category}
-                            rating={product.rating}
-                          ></CardProduct>
-                        </Link>
-                      </div>
-                    );
-                  })}
-                  <div class="col">Column</div>
-                  <div class="col">Column</div>
-                  <div class="col">Column</div>
-=======
               <div className="container text-center">
                 <div className="row">
                   {localProducts?.map((product) => {
@@ -147,10 +119,10 @@ export default function Home() {
                       </div>
                     );
                   })}
->>>>>>> dev
                 </div>
               </div>
             </div>
+            <Footer />
           </div>
         </div>
       </div>
