@@ -20,11 +20,10 @@ module.exports = (sequelize) => {
         state: {
           type: DataTypes.STRING,
           allowNull: false,
-        }
+        }        
       },
       {
         timestamps: false
       }
       );
     };
-    

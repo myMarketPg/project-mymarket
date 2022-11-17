@@ -20,6 +20,12 @@ export default function Home() {
     {
       id: 1,
       name: "Remera Blanca Lisa",
+      image:
+        "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
+      category: "Remeras",
+      price: 1200,
+      stock: 50,
+      sales: 15,
       price: 1200,
       category: "Remeras",
       image:
@@ -59,6 +65,18 @@ export default function Home() {
         "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
       rating: 1,
       description: "hola",
+      addToCart: 1,
+    },
+    {
+      id: 1,
+      name: "Remera Blanca Lisa",
+      price: 1200,
+      category: "Remera",
+      image:
+        "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
+      rating: 1,
+      description: "hola",
+      addToCart: 1,
       addToCart: 4,
     },
   ]);
@@ -78,6 +96,7 @@ export default function Home() {
       <NavBar localProducts={localProducts} />
       <div className="Home_container">
         <div className="row_container">
+          r
           <div className="row">
             <Carrusel />
             <Filtros localProducts={localProducts} />

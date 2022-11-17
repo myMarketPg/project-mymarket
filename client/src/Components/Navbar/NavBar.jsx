@@ -46,6 +46,11 @@ export default function NavBar({ localProducts }) {
                 </a>
               </Link>
             </li>
+            <li className="nav-item">
+              <Link to="/registro">
+                <a className="nav-link">Registrate</a>
+              </Link>
+            </li>
           </ul>
           {isAuthenticated ? (
             <>

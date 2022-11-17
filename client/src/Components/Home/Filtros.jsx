@@ -42,7 +42,7 @@ export default function Filtros({ localProducts }) {
   //RENDER
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-dark ">
+      <nav className="navbar navbar-expand-lg navbar-light bg-dark">
         <div className="container-fluid d-flex justify-content-center">
           <label className="text-white">Categorias:</label>
           <form>

@@ -32,6 +32,12 @@ export default function DetailProductModal({ product }) {
                         <br />
                         <span>ID: {product.id} </span>
                         <br />
+                        <span>Name: {product.name} </span>
+                        <br />
+                        <span>Model: {product.model} </span>
+                        <br />
+                        <span>Brand: {product.brand} </span>
+                        <br />
                         <span>Category: {product.category} </span>
                         <br />
                         <span>Price: ${product.price} </span>
@@ -39,6 +45,8 @@ export default function DetailProductModal({ product }) {
                         <span>Stock: {product.stock} </span>
                         <br />
                         <span>Sales: {product.sales} </span>
+                        <br />
+                        <span>Description: {product.description} </span>
                     </div>
                     <div className="modal-footer">
                         <button
