@@ -13,23 +13,17 @@ export default function SellerManageCategories() {
     const { allCategories } = useSelector((state) => state);
 
     /// ESTADOS LOCALES ///
-    const [localCategories, setLocalCategories] = useState([
-        {
-            id: 16565464684654656546546546546,
-            name: "Electric Guitars",
-            stock: 25,
-        },
-    ]);
+    const [localCategories, setLocalCategories] = useState([]);
 
     /// HOOKS //
     useEffect(() => {
         dispatch(getAllCategories());
     }, []);
-    /*
+
     useEffect(() => {
         setLocalCategories(allCategories);
     }, [allCategories]);
-*/
+
     console.log(allCategories);
 
     /// RENDER ///

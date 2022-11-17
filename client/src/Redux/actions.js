@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from "axios";
 
 /////-----RUTAS STORE-----/////
 export const getStore = () => {
@@ -9,9 +9,8 @@ export const getStore = () => {
                 type: "GET_STORE",
                 payload: data.data,
             });
-
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     };
 };
@@ -19,13 +18,16 @@ export const getStore = () => {
 export const updateStore = (payload) => {
     return async function (dispatch) {
         try {
-            const data = await axios.put("http://localhost:3001/api/store", payload);
+            const data = await axios.put(
+                "http://localhost:3001/api/store",
+                payload
+            );
             dispatch({
                 type: "UPDATE_STORE",
                 payload: data.data,
             });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     };
 };
@@ -34,15 +36,13 @@ export const updateStore = (payload) => {
 export const getAllProducts = () => {
     return async function (dispatch) {
         try {
-            const data = await axios.get(
-                "http://localhost:3001/api/products"
-            );
+            const data = await axios.get("http://localhost:3001/api/products");
             dispatch({
                 type: "GET_ALL_PRODUCTS",
                 payload: data.data,
             });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     };
 };
@@ -50,13 +50,15 @@ export const getAllProducts = () => {
 export const getProductDetail = (id) => {
     return async function (dispatch) {
         try {
-            const data = await axios.get(`http://localhost:3001/api/products/${id}`);
+            const data = await axios.get(
+                `http://localhost:3001/api/products/${id}`
+            );
             dispatch({
                 type: "GET_PRODUCT_DETAIL",
                 payload: data.data,
             });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     };
 };
@@ -64,37 +66,46 @@ export const getProductDetail = (id) => {
 export const postProduct = (payload) => {
     return async function () {
         try {
-            const data = await axios.post("http://locahost:3001/api/products", payload)
-            return data
+            const data = await axios.post(
+                "http://locahost:3001/api/products",
+                payload
+            );
+            return data;
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
-}
+    };
+};
 
 export const updateProduct = (payload, id) => {
     return async function (dispatch) {
         try {
-            const data = await axios.put(`http://locahost:3001/api/products/${id}`, payload)
+            const data = await axios.put(
+                `http://locahost:3001/api/products/${id}`,
+                payload
+            );
             dispatch({
                 type: "UPDATE_PRODUCT",
-                payload: data.data
-            })
+                payload: data.data,
+            });
+        } catch (error) {
+            console.log(error);
         }
-        catch (error) { console.log(error) }
-    }
-}
+    };
+};
 
 export const deleteProduct = (id) => {
     return async function () {
         try {
-            const data = await axios.delete(`http://localhost:3001/api/products/${id}`)
-            return data
+            const data = await axios.delete(
+                `http://localhost:3001/api/products/${id}`
+            );
+            return data;
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
-}
+    };
+};
 
 /////-----RUTAS BUYERS----/////
 export const getAllBuyers = () => {
@@ -106,7 +117,7 @@ export const getAllBuyers = () => {
                 payload: data.data,
             });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     };
 };
@@ -114,51 +125,62 @@ export const getAllBuyers = () => {
 export const getBuyerDetail = (id) => {
     return async function (dispatch) {
         try {
-            const data = await axios.get(`http://localhost:3001/api/buyers/${id}`);
+            const data = await axios.get(
+                `http://localhost:3001/api/buyers/${id}`
+            );
             dispatch({
                 type: "GET_BUYER_DETAIL",
                 payload: data.data,
             });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     };
-}
+};
 
 export const postBuyer = (payload) => {
     return async function () {
         try {
-            const data = await axios.post("http://locahost:3001/api/buyers", payload)
-            return data
+            const data = await axios.post(
+                "http://locahost:3001/api/buyers",
+                payload
+            );
+            return data;
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
-}
+    };
+};
 
 export const updateBuyer = (payload, id) => {
     return async function (dispatch) {
         try {
-            const data = await axios.put(`http://locahost:3001/api/buyers/${id}`, payload)
+            const data = await axios.put(
+                `http://locahost:3001/api/buyers/${id}`,
+                payload
+            );
             dispatch({
                 type: "UPDATE_BUYER",
-                payload: data.data
-            })
+                payload: data.data,
+            });
+        } catch (error) {
+            console.log(error);
         }
-        catch (error) { console.log(error) }
-    }
-}
+    };
+};
 
 export const deleteBuyer = (id) => {
     return async function () {
         try {
-            const data = await axios.delete(`http://localhost:3001/api/buyers/${id}`)
-            return data
+            const data = await axios.delete(
+                `http://localhost:3001/api/buyers/${id}`
+            );
+            return data;
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
-}
+    };
+};
 
 /////-----RUTAS ADMIN-----/////
 export const getAdmin = () => {
@@ -170,7 +192,7 @@ export const getAdmin = () => {
                 payload: data.data,
             });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     };
 };
@@ -178,10 +200,13 @@ export const getAdmin = () => {
 export const postAdmin = (payload) => {
     return async function () {
         try {
-            const data = await axios.post("http://localhost:3001/api/admin", payload);
-            return data
+            const data = await axios.post(
+                "http://localhost:3001/api/admin",
+                payload
+            );
+            return data;
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     };
 };
@@ -189,30 +214,31 @@ export const postAdmin = (payload) => {
 export const updateAdmin = (payload) => {
     return async function (dispatch) {
         try {
-            const data = await axios.put("http://localhost:3001/api/admin", payload);
+            const data = await axios.put(
+                "http://localhost:3001/api/admin",
+                payload
+            );
             dispatch({
                 type: "UPDATE_ADMIN",
                 payload: data.data,
             });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     };
 };
-
 
 /////-----RUTAS CATEGORIES-----/////
 export const getAllCategories = () => {
     return async function (dispatch) {
         try {
-            const data = await axios.get("http://localhost:3001/api/categori");
+            const data = await axios.get("http://localhost:3001/api/category");
             dispatch({
                 type: "GET_ALL_CATEGORIES",
-                payload: data.data,
+                payload: data.data.categories,
             });
-
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     };
 };
@@ -220,50 +246,61 @@ export const getAllCategories = () => {
 export const getCategoryDetail = (id) => {
     return async function (dispatch) {
         try {
-            const data = await axios.get(`http://localhost:3001/api/categori/${id}`);
+            const data = await axios.get(
+                `http://localhost:3001/api/category/${id}`
+            );
             dispatch({
                 type: "GET_CATEGORY_DETAIL",
                 payload: data.data,
             });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     };
-}
+};
 
 export const postCategory = (payload) => {
     return async function () {
         try {
-            const data = await axios.post("http://locahost:3001/api/categori", payload)
-            return data
+            const data = await axios.post(
+                "http://locahost:3001/api/category",
+                payload
+            );
+            return data;
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
-}
+    };
+};
 export const updateCategory = (payload, id) => {
     return async function (dispatch) {
         try {
-            const data = await axios.put(`http://locahost:3001/api/categori/${id}`, payload)
+            const data = await axios.put(
+                `http://locahost:3001/api/category/${id}`,
+                payload
+            );
             dispatch({
                 type: "UPDATE_CATEGORY",
-                payload: data.data
-            })
+                payload: data.data,
+            });
+        } catch (error) {
+            console.log(error);
         }
-        catch (error) { console.log(error) }
-    }
-}
+    };
+};
 
 export const deleteCategory = (id) => {
     return async function () {
         try {
-            const data = await axios.delete(`http://localhost:3001/api/categori/${id}`)
-            return data
+            const data = await axios.delete(
+                `http://localhost:3001/api/category/${id}`
+            );
+            return data;
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
-}
+    };
+};
 
 ////-----RUTAS ORDERS-----/////
 export const getAllOrders = () => {
@@ -275,7 +312,7 @@ export const getAllOrders = () => {
                 payload: data.data,
             });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     };
 };
@@ -283,58 +320,69 @@ export const getAllOrders = () => {
 export const getOrderDetail = (id) => {
     return async function (dispatch) {
         try {
-            const data = await axios.get(`http://localhost:3001/api/order/${id}`);
+            const data = await axios.get(
+                `http://localhost:3001/api/order/${id}`
+            );
             dispatch({
                 type: "GET_ORDER_DETAIL",
                 payload: data.data,
             });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     };
-}
+};
 
 export const postOrder = (payload) => {
     return async function () {
         try {
-            const data = await axios.post("http://locahost:3001/api/order", payload)
-            return data
+            const data = await axios.post(
+                "http://locahost:3001/api/order",
+                payload
+            );
+            return data;
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
-}
+    };
+};
 
 export const updateOrder = (payload, id) => {
     return async function (dispatch) {
         try {
-            const data = await axios.put(`http://locahost:3001/api/order/${id}`, payload)
+            const data = await axios.put(
+                `http://locahost:3001/api/order/${id}`,
+                payload
+            );
             dispatch({
                 type: "UPDATE_ORDER",
-                payload: data.data
-            })
+                payload: data.data,
+            });
+        } catch (error) {
+            console.log(error);
         }
-        catch (error) { console.log(error) }
-    }
-}
+    };
+};
 
 export const deleteOrder = (id) => {
     return async function () {
         try {
-            const data = await axios.delete(`http://localhost:3001/api/order/${id}`)
-            return data
+            const data = await axios.delete(
+                `http://localhost:3001/api/order/${id}`
+            );
+            return data;
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
-}
+    };
+};
 
 /////----CARRITO DE COMPRAS----/////
 export const TYPES = {
     ADD_TO_CART: "ADD_TO_CART",
     REMOVE_ONE_FROM_CART: "REMOVE_ONE_FROM_CART",
     REMOVE_ALL_FROM_CART: "REMOVE_ALL_FROM_CART",
-    CLEAR_CART: "CLEAR_CART"
+    CLEAR_CART: "CLEAR_CART",
 };
 
 /////-----FILTROS-----/////

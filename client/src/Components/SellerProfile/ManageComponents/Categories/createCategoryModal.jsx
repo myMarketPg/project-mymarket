@@ -1,7 +1,7 @@
 import { getSpaceUntilMaxLength } from "@testing-library/user-event/dist/utils";
 import React, { useState, useReducer, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { postCategory } from "../../../../Redux/actions";
+import { getAllCategories, postCategory } from "../../../../Redux/actions";
 
 import checkmark from "../../../../Images/checkmark.gif";
 import checkmarkInfinito from "../../../../Images/checkmarkInfinito.gif";
@@ -52,9 +52,9 @@ export default function CreateCategoryModal() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        /* postCategory(categoryForm);
-        setPostSuccess(true);*/
+        postCategory(categoryForm);
         setPostSuccess(true);
+        dispatch(getAllCategories());
         console.log(categoryForm);
 
         setCategoryForm({ type: "SUBMIT" });
@@ -99,6 +99,7 @@ export default function CreateCategoryModal() {
                                         Name:
                                     </label>
                                     <input
+                                        required
                                         type="text"
                                         className="form-control"
                                         id="category-name"
