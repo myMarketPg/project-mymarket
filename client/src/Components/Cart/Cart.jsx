@@ -1,14 +1,16 @@
-import { useReducer } from 'react';
+import {  useState } from 'react';
 import { TYPES } from '../actions/shoppingactions';
 import CartItem from '../CartItem';
 import CardProduct from '../CardProduct';
-import { initialState, rootReducer } from "../../Redux/reducer";
+import { useDispatch } from 'react-redux';
+// import { initialState, rootReducer } from "../../Redux/reducer";
 
 
 const Cart = () => {
+  const dispatch = useDispatch();
 
-    const [state, dispatch] = useReducer(rootReducer, initialState);
-    const [allProducts, cart] =  state;
+    // const [state, dispatch] = useReducer(rootReducer, initialState);
+    // const [allProducts, cart] =  state;
 
     const addToCart = (id) => {
         console.log(id)
