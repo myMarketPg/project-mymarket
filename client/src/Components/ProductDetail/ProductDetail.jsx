@@ -6,7 +6,6 @@ import {getProductDetail} from '../../Redux/actions';
 const ProductDetail = (props) => {
 
     const date = useSelector((state) => state.productDetail);
-    console.log('date-->', date);
 
     const dispatch = useDispatch();
 

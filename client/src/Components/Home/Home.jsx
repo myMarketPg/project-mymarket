@@ -19,14 +19,12 @@ export default function Home() {
     {
       id: 1,
       name: "Remera Blanca Lisa",
-<<<<<<< HEAD
       image:
         "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
       category: "Remeras",
       price: 1200,
       stock: 50,
       sales: 15,
-=======
       price: 1200,
       category: "Remeras",
       image:
@@ -66,7 +64,6 @@ export default function Home() {
         "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
       rating: 1,
       description: "hola",
-<<<<<<< HEAD
       addToCart: 1,
     },
     {
@@ -79,10 +76,6 @@ export default function Home() {
       rating: 1,
       description: "hola",
       addToCart: 1,
->>>>>>> dev
-=======
-      addToCart: 4,
->>>>>>> dev
     },
   ]);
 

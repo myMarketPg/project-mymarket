@@ -11,8 +11,8 @@ import store from "./Redux/store";
 ReactDOM.render(
     <React.StrictMode>
         <Auth0Provider 
-        domain="dev-8h8kspbxbki6dnin.us.auth0.com" 
-        clientId="UKSiHHCH1BkiKREwLVVREf2VM4vvZ9o7" 
+        domain="dev-2xsecb8qkelfswpd.us.auth0.com" 
+        clientId="IAgMVTNhwmUjuFITvdtzfvoJlQocURKa" 
         redirectUri={window.location.origin}>
          <Provider store={store}>
             <BrowserRouter>
