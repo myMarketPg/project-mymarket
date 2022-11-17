@@ -7,6 +7,8 @@ import CardProduct from "../CardProduct/CardProduct.jsx";
 import Filtros from "./Filtros";
 import Carrusel from "./Carrusel/Carrusel.jsx";
 
+//import ShoppingCart from "../ShoppingCart/ShoppingCart.jsx";
+
 export default function Home() {
   ///DISPATCH///
   const dispatch = useDispatch();

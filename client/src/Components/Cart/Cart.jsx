@@ -1,4 +1,3 @@
-
 import { useReducer } from 'react';
 import { TYPES } from '../actions/shoppingactions';
 import CartItem from '../CartItem';
@@ -6,7 +5,7 @@ import CardProduct from '../CardProduct';
 import { initialState, rootReducer } from "../../Redux/reducer";
 
 
-const ShoppingCart = () => {
+const Cart = () => {
 
     const [state, dispatch] = useReducer(rootReducer, initialState);
     const [allProducts, cart] =  state;
@@ -51,4 +50,4 @@ const ShoppingCart = () => {
     )
 };
 
-export default ShoppingCart;
+export default Cart;
