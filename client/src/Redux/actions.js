@@ -259,17 +259,16 @@ export const getCategoryDetail = (id) => {
     };
 };
 
-export const postCategory = (payload) => {
-    return async function () {
-        try {
-            const data = await axios.post(
-                "http://locahost:3001/api/category",
-                payload
-            );
-            return data;
-        } catch (error) {
-            console.log(error);
-        }
+export const postCategory = (newCategory) => {
+    return async function (dispatch) {
+        return axios
+            .post("http://localhost:3001/api/category", {
+                name: newCategory.name,
+            })
+            .then((json) =>
+                dispatch({ type: "POST_CATEGORY", payload: json.data })
+            )
+            .catch((error) => console.log(error));
     };
 };
 export const updateCategory = (payload, id) => {

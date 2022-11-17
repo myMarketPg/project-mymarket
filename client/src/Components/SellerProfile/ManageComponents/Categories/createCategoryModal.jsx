@@ -52,7 +52,7 @@ export default function CreateCategoryModal() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        postCategory(categoryForm);
+        dispatch(postCategory(categoryForm));
         setPostSuccess(true);
         dispatch(getAllCategories());
         console.log(categoryForm);
