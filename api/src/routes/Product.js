@@ -25,12 +25,12 @@ router.get('/:id', async (req, res) => {
 
 
 router.post('/', async(req, res) => {
-    const { name, image, description, price, active, variants, category } = req.body;
-    if( !name || !image || !description || !price ) {
+    const { name, image, description,model, brand, price, stock, category } = req.body;
+    if( !name || !image || !description || !price || !stock || !model || !brand) {
         res.status(400).json({info: 'falta ingresar un dato'})
     }
     try {
-        controllers.postProduct(name, image, description, price, active, variants, category);
+        controllers.postProduct(name, image, description,model, brand, price, stock, category);
         res.status(200).send('Producto añadido');
     } catch (error) {
         res.status(404).send(error.message);
@@ -39,17 +39,18 @@ router.post('/', async(req, res) => {
 
 router.put('/:id', async (req, res) => {
     const { id } = req.params;
-    const { name, image, stock, description, price, featured, variants, category } = req.body;
+    const { name, image, description,model, brand, price, stock, category } = req.body;
 
     let changeProduct = {
         id,
         name, 
         image, 
         stock, 
-        description, 
+        description,
+        model,
+        brand, 
         price, 
         featured,
-        variants,
         category
     }
     try {

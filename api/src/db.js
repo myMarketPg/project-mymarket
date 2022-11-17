@@ -42,8 +42,8 @@ Product.belongsTo(Category);
 //Buyer.hasMany(Order);
 //Order.belongsTo(Buyer);
 
-Product.belongsToMany(Variant, { through: 'Product_Variant'});
-Variant.belongsToMany(Product, { through: 'Product_Variant'});
+// Product.belongsToMany(Variant, { through: 'Product_Variant'});
+// Variant.belongsToMany(Product, { through: 'Product_Variant'});
 
 Product.belongsToMany(Order, { through: 'Product_Order' });
 Order.belongsToMany(Product, { through: 'Product_Order' });
