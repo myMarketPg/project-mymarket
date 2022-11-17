@@ -7,7 +7,7 @@ module.exports = {
         // const orders = await Order.findAll();        
         const allProducts = [];
         for (let i = 0; i < products.length; i++) {
-            let sales = products[i].orders.filter(e => e.state === 'successfull' && e.totalAmount);
+            // let sales = products[i].orders.filter(e => e.state === 'successfull' && e.totalAmount);
             let product = {
                 id: products[i].id,
                 name: products[i].name,
@@ -18,7 +18,7 @@ module.exports = {
                 price: products[i].price,
                 active: products[i].active,
                 stock: products[i].stock,
-                categories: products[i].category,
+                categories: products[i].category.name,
 
             }
             allProducts.push(product);
@@ -35,9 +35,10 @@ module.exports = {
             price: price,
             stock: stock,
         });
-        const newCategory = await Category.findByPk(category.id);
-        await newCategory.addProduct(product.id);
-        return `Producto creado exitosamente`;
+        await Category.findOrCreate({where: {name: category}});
+        const newCategory = await Category.findAll({where: {name: category}});
+        newCategory.forEach(async (e) => await e.addProduct(product.id));
+        return newCategory;
     },
     modifyProduct: async (object) => {
         let product = await Product.findByPk(object.id);        
@@ -55,5 +56,16 @@ module.exports = {
             await Category.update({name: categories[i].name}, {where: {id: categories[i].id}});
         }
         return `Producto modificado correctamente`;
+    },
+    postData: async (array) => {        
+        array.map(element => Product.create({name: element.name, 
+            image: element.image, 
+            stock: element.stock, 
+            description: element.description, 
+            model: element.model, 
+            brand: element.brand, 
+            price: element.price}));        
+        Promise.all(array);
+        return `successfully`;
     }
 };
