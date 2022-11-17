@@ -7,22 +7,21 @@ import Register from "./Components/Registro/Registro";
 import SellerDashboard from "./Components/SellerProfile/SellerDashboard";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <div>
-        <Route exact path="/" render={() => <Home />} />
-        <Route exact path="/product/:id" render={() => <ProductDetail />} />
-        <Route exact path="/admin" render={() => <SellerDashboard />} />
-<<<<<<< HEAD
-        <Route exact path="/registro" render={() => <Register />} />
-        <Route exact path="/sobrenosotros" render={() => <About />} />
-=======
-        <Route exact path="/sobrenosotros" render={() => <About />} />
-        <Route exact path="/contacto" render={() => <About />} />
->>>>>>> dev
-      </div>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <div>
+                <Route exact path="/" render={() => <Home />} />
+                <Route
+                    exact
+                    path="/product/:id"
+                    render={() => <ProductDetail />}
+                />
+                <Route exact path="/admin" render={() => <SellerDashboard />} />
+                <Route exact path="/sobrenosotros" render={() => <About />} />
+                <Route exact path="/contacto" render={() => <About />} />
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
