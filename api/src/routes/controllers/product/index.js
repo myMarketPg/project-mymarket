@@ -1,45 +1,43 @@
-const { Product, Variant, Category } = require('../../../db');
+const e = require('express');
+const { Product, Variant, Category, Order } = require('../../../db');
 
 module.exports = {
     listProducts: async () => {
-        const products = await Product.findAll({include: [{model: Variant}, {model: Category}]});
+        const products = await Product.findAll({include: [{model: Category}, {model: Order}]});
+        // const orders = await Order.findAll();        
         const allProducts = [];
         for (let i = 0; i < products.length; i++) {
+            let sales = products[i].orders.filter(e => e.state === 'successfull' && e.totalAmount);
             let product = {
                 id: products[i].id,
                 name: products[i].name,
                 image: products[i].image,
-                stock: products[i].stock,
+                model: products[i].model,
+                brand: products[i].brand,
                 description: products[i].description,
                 price: products[i].price,
-                featured: products[i].featured,
-                variants: products[i].variants.map(e => e.name),
-                category: products[i].category.name
+                active: products[i].active,
+                stock: products[i].stock,
+                categories: products[i].category,
+
             }
             allProducts.push(product);
         }
         return allProducts;
     },
-    postProduct: async (name, image, stock, description, price, featured, variants, category) => {
+    postProduct: async (name, image, description,model, brand, price, stock, category) => {
         const product = await Product.create({
             name: name,
-            image: image,
-            stock: stock,
+            image: image,            
             description: description,
+            model: model,
+            brand: brand,
             price: price,
-            featured: featured
-        });        
-        const array = variants.map((variant) => Variant.create({id: variant.id, name: variant.name}));
-        const array2 = category.map((category) => Category.create({id: category.id, name: category.name}));
-        await Promise.all(array, array2);
-        const variantsDB = await Variant.findAll();
-        const categoriesDB = await Category.findAll();
-        for (let i = 0; i < variantsDB.length; i++) {
-            await product.addVariant(variantsDB[i].id);
-        }
-        for (let i = 0; i < categoriesDB.length; i++) {
-            await categoriesDB[i].addProduct(product.id);
-        }        
+            stock: stock,
+        });
+        const newCategory = await Category.findByPk(category.id);
+        await newCategory.addProduct(product.id);
+        return `Producto creado exitosamente`;
     },
     modifyProduct: async (object) => {
         let product = await Product.findByPk(object.id);        
@@ -48,13 +46,10 @@ module.exports = {
             image: object.image,
             stock: object.stock,
             description: object.description,
+            model: object.model,
+            brand: object.brand,
             price: object.price,
-            featured: object.featured
-        }, {where: {id: object.id}});
-        const array = object.variants;
-        for (let i = 0; i < array.length; i++) {
-            await Variant.update({name: array[i].name}, {where: {id: array[i].id}});
-        }        
+        }, {where: {id: object.id}});       
         const categories = object.category;
         for (let i = 0; i < categories.length; i++) {
             await Category.update({name: categories[i].name}, {where: {id: categories[i].id}});

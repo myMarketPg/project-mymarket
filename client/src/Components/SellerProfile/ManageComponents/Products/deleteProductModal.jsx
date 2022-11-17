@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { deleteProduct, getAllProducts } from "../../../../Redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function DeleteProductModal({ id }) {
+export default function DeleteProductModal({ product }) {
     ///DISPATCH///
     const dispatch = useDispatch();
 
@@ -13,7 +13,7 @@ export default function DeleteProductModal({ id }) {
 
     function handleDelete(e) {
         e.preventDefault();
-        dispatch(deleteProduct(id));
+        dispatch(deleteProduct(product.id));
         alert("Product Deleted!");
         dispatch(getAllProducts());
     }
@@ -42,7 +42,26 @@ export default function DeleteProductModal({ id }) {
                             aria-label="Close"
                         ></button>
                     </div>
-                    <div className="modal-body">INFO DEL PRODUCTO</div>
+                    <div className="modal-body">
+                        <img
+                            className="img-fluid"
+                            src={product.img}
+                            alt="productimage"
+                        />
+                        <br />
+                        <span>ID: {product.id} </span>
+                        <br />
+                        <span>Name: {product.name} </span>
+                        <br />
+                        <span>Category: {product.category} </span>
+                        <br />
+                        <span>Price: ${product.price} </span>
+                        <br />
+                        <span>Stock: {product.stock} </span>
+                        <br />
+                        <span>Sales: {product.sales} </span>
+                    </div>
+
                     <div className="modal-footer">
                         <button
                             type="button"

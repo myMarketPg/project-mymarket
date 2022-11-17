@@ -6,6 +6,7 @@ import NavBar from "../Navbar/NavBar.jsx";
 import CardProduct from "../CardProduct/CardProduct.jsx";
 import Filtros from "./Filtros";
 import Carrusel from "./Carrusel/Carrusel.jsx";
+import Footer from "../Footer/footer.jsx";
 
 //import ShoppingCart from "../ShoppingCart/ShoppingCart.jsx";
 
@@ -21,8 +22,47 @@ export default function Home() {
     {
       id: 1,
       name: "Remera Blanca Lisa",
+      image:
+        "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
+      category: "Remeras",
       price: 1200,
-      category: "Remera",
+      stock: 50,
+      sales: 15,
+      price: 1200,
+      category: "Remeras",
+      image:
+        "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
+      rating: 1,
+      description: "hola",
+      addToCart: 1,
+    },
+    {
+      id: 2,
+      name: "Pantalon Blanco",
+      price: 1200,
+      category: "Pantalones",
+      image:
+        "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
+      rating: 1,
+      description: "hola",
+      addToCart: 2,
+    },
+    {
+      id: 3,
+      name: "Zapatilla marron",
+      price: 1200,
+      category: "Calzado",
+      image:
+        "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
+      rating: 1,
+      description: "hola",
+      addToCart: 3,
+    },
+    {
+      id: 4,
+      name: "Campera",
+      price: 1200,
+      category: "Abrigo",
       image:
         "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
       rating: 1,
@@ -39,39 +79,7 @@ export default function Home() {
       rating: 1,
       description: "hola",
       addToCart: 1,
-    },
-    {
-      id: 1,
-      name: "Remera Blanca Lisa",
-      price: 1200,
-      category: "Remera",
-      image:
-        "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
-      rating: 1,
-      description: "hola",
-      addToCart: 1,
-    },
-    {
-      id: 1,
-      name: "Remera Blanca Lisa",
-      price: 1200,
-      category: "Remera",
-      image:
-        "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
-      rating: 1,
-      description: "hola",
-      addToCart: 1,
-    },
-    {
-      id: 1,
-      name: "Remera Blanca Lisa",
-      price: 1200,
-      category: "Remera",
-      image:
-        "https://i.pinimg.com/550x/aa/e5/31/aae5310bb7af7bf1d514a78ed307c214.jpg",
-      rating: 1,
-      description: "hola",
-      addToCart: 1,
+      addToCart: 4,
     },
   ]);
 
@@ -90,6 +98,7 @@ export default function Home() {
       <NavBar localProducts={localProducts} />
       <div className="Home_container">
         <div className="row_container">
+          r
           <div className="row">
             <Carrusel />
             <Filtros localProducts={localProducts} />
@@ -115,6 +124,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <Footer />
           </div>
         </div>
       </div>
