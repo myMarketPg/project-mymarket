@@ -46,36 +46,20 @@ export default function NavBar({ localProducts }) {
                 </a>
               </Link>
             </li>
-<<<<<<< HEAD
             <li className="nav-item">
               <Link to="/registro">
                 <a className="nav-link">Registrate</a>
               </Link>
             </li>
-            <li className="nav-item">
-<<<<<<< HEAD
-              <Link to="/registro">
-                <a className="nav-link">Registrate</a>
-              </Link>
-            </li>
-            <li className="nav-item">
-=======
->>>>>>> dev
-              <Link to="/login">
-                <a className="nav-link">Tu Cuenta</a>
-              </Link>
-            </li>
-=======
->>>>>>> dev
           </ul>
           {isAuthenticated ? (
             <>
               <Profile />
-              <LogoutButton />
             </>
           ) : (
             <LoginButton />
           )}
+
           <form className="d-flex" role="search">
             <input
               className="form-control me-2"
