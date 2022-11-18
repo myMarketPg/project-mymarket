@@ -3,8 +3,9 @@ const router = express.Router();
 const controllers = require('./controllers/Categories');
 
 router.get('/', async(req, res) => {
+    const { name } = req.query;
     try {
-        const categories = await controllers.listCategories();
+        const categories = await controllers.listCategories(name);
         res.status(200).json({categories: categories});
     } catch (error) {
         res.status(404).send(error.message);
