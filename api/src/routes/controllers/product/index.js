@@ -25,16 +25,7 @@ module.exports = {
         }
         return allProducts;
     },
-    postProduct: async (
-        name,
-        image,
-        description,
-        model,
-        brand,
-        price,
-        stock,
-        category
-    ) => {
+    postProduct: async ( name, image, description, model, brand, price, stock, category ) => {
         try {
             const result = await cloudinary.uploader.upload(image, {
                 folder: "Products",
