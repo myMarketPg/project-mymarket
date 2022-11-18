@@ -1,8 +1,12 @@
 import { getSpaceUntilMaxLength } from "@testing-library/user-event/dist/utils";
 import React, { useState, useReducer, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { postProduct } from "../../../../Redux/actions";
-import { getAllCategories } from "../../../../Redux/actions";
+import {
+    getAllProducts,
+    postProduct,
+    getAllCategories,
+} from "../../../../Redux/actions";
+
 import checkmark from "../../../../Images/checkmark.gif";
 import checkmarkInfinito from "../../../../Images/checkmarkInfinito.gif";
 
@@ -31,7 +35,6 @@ export default function CreateProductModal({ localCategories }) {
         );
     }
 
-    console.log(categoryList);
     /// variable///
     const checkMarkGif = checkmark;
     const checkMarkGifInfinito = checkmarkInfinito;
@@ -168,6 +171,7 @@ export default function CreateProductModal({ localCategories }) {
     function handleSubmit(e) {
         e.preventDefault();
         dispatch(postProduct(productForm));
+        dispatch(getAllProducts());
         setPostSuccess(true);
         console.log(productForm);
 
