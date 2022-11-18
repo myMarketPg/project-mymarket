@@ -48,7 +48,7 @@ export default function ProductTable({ localProducts }) {
                                 </td>
                                 <td className="align-middle">
                                     <img
-                                        src={product.img}
+                                        src={product.image}
                                         className="listImg img-thumbnail "
                                     />
                                 </td>
