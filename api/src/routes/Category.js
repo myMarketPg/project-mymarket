@@ -36,7 +36,7 @@ router.put('/:id', async (req, res) => {
         let message = await controllers.modifyCategory(changeCategory);
         return res.status(200).json(message);
     } catch(error) {
-        res.status(404).send({error: 'Producto no cambiado'});
+        res.status(404).send({error: 'Categoria no cambiada'});
     }
 });
 
@@ -45,8 +45,8 @@ router.delete('/:id', async (req, res) => {
     const allCategories = await controllers.listCategories();
     try {
         if(id) {
-            const deleteCategorie = allCategories.filter(category => category.id === id);
-            deleteCategorie.length ?
+            const deleteCategory = allCategories.filter(category => category.id === id);
+            deleteCategory.length ?
             res.status(200).send('Categoría Eliminada') :
             res.status(404).send('Error al eliminar categoría')
         }
