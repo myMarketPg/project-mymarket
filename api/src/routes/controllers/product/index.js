@@ -1,22 +1,14 @@
 const e = require("express");
-const { Product, Variant, Category, Order } = require("../../../db");
+const { Product, Category, Order } = require("../../../db");
 const cloudinary = require("../../../utils/cloudinary");
 
 module.exports = {
     listProducts: async () => {
         const products = await Product.findAll({
             include: [{ model: Category }, { model: Order }],
-        });
-        // const orders = await Order.findAll();
+        });        
         const allProducts = [];
-        for (let i = 0; i < products.length; i++) {
-<<<<<<< HEAD
-            // let sales = products[i].orders.filter(e => e.state === 'successfull' && e.totalAmount);
-=======
-            let sales = products[i].orders.filter(
-                (e) => e.state === "successfull" && e.totalAmount
-            );
->>>>>>> dev
+        for (let i = 0; i < products.length; i++) {            
             let product = {
                 id: products[i].id,
                 name: products[i].name,
@@ -33,22 +25,13 @@ module.exports = {
         }
         return allProducts;
     },
-    postProduct: async (
-        name,
-        image,
-        description,
-        model,
-        brand,
-        price,
-        stock,
-        category
-    ) => {
-        const imageCloud = await cloudinary.uploader.upload(image, {
+    postProduct: async (name, image, description, model, brand, price, stock, category) => {
+        /* const imageCloud = await cloudinary.uploader.upload(image, {
             folder: "Products",
-        });
+        }); */
         const product = await Product.create({
             name: name,
-            image: imageCloud.secure_url,
+            image: image,
             description: description,
             model: model,
             brand: brand,
@@ -83,7 +66,6 @@ module.exports = {
         }
         return `Producto modificado correctamente`;
     },
-<<<<<<< HEAD
     postData: async (array) => {
         let array2 = array;
         array.map(e => {
@@ -110,6 +92,3 @@ module.exports = {
         return `successfully`;
     }
 };
-=======
-};
->>>>>>> dev
