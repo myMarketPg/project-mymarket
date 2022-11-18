@@ -11,9 +11,10 @@ export default function DeleteCategoryModal({ category }) {
 
     /////Event Handler/////
 
-    function handleDelete(e) {
+    function handleDelete(e, id) {
         e.preventDefault();
-        dispatch(deleteCategory(category.id));
+        dispatch(deleteCategory(id));
+        dispatch(getAllCategories());
         // alert("Category Deleted!");
         // dispatch(getAllCategorys());
     }
@@ -61,7 +62,7 @@ export default function DeleteCategoryModal({ category }) {
                             type="button"
                             className="btn btn-danger"
                             onClick={(e) => {
-                                handleDelete(e);
+                                handleDelete(e, category.id);
                             }}
                         >
                             Delete Category
