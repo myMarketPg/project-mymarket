@@ -78,9 +78,9 @@ router.delete('/:id', async (req, res) => {
 });
 
 router.post('/json', async (req, res) => {
-    let array = req.body;
+    let { products } = req.body;
     try {
-        const message = await controllers.postData(array);
+        const message = await controllers.postData(products);
         return res.status(200).send(message);
     } catch (error) {
         next();

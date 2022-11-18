@@ -18,7 +18,7 @@ module.exports = {
                 price: products[i].price,
                 active: products[i].active,
                 stock: products[i].stock,
-                categories: products[i].category.name,
+                categories: products[i].category,
 
             }
             allProducts.push(product);
@@ -57,15 +57,29 @@ module.exports = {
         }
         return `Producto modificado correctamente`;
     },
-    postData: async (array) => {        
-        array.map(element => Product.create({name: element.name, 
-            image: element.image, 
-            stock: element.stock, 
-            description: element.description, 
-            model: element.model, 
-            brand: element.brand, 
-            price: element.price}));        
-        Promise.all(array);
+    postData: async (array) => {
+        let array2 = array;
+        array.map(e => {
+            Product.create({
+                name: e.name,
+                description: e.description,
+                stock: e.stock,
+                image: e.image,
+                model: e.model,
+                brand: e.brand,
+                price: e.price
+            });            
+        });
+        array2.map(e => {
+            Category.findOrCreate({where: {name: e.category}});            
+        });
+        Promise.all(array, array2);
+        for (let i = 0; i < array.length; i++) {
+            let newCategory = await Category.findOne({where: {name: array[i].category}});
+            let newProduct = await Product.findOne({where: {name: array[i].name}});
+            newCategory.addProduct(newProduct.id);
+            console.log(newCategory, newProduct);
+        }
         return `successfully`;
     }
 };
