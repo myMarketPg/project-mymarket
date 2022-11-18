@@ -23,6 +23,7 @@ export default function SellerManageCategories() {
     useEffect(() => {
         setLocalCategories(allCategories);
     }, [allCategories]);
+    console.log(localCategories);
 
     /// RENDER ///
     return (
