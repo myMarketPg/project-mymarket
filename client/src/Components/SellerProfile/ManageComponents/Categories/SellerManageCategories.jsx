@@ -24,8 +24,6 @@ export default function SellerManageCategories() {
         setLocalCategories(allCategories);
     }, [allCategories]);
 
-    console.log(localCategories);
-
     /// RENDER ///
     return (
         <div>

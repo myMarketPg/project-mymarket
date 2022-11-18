@@ -4,13 +4,21 @@ import DeleteCategoryModal from "./deleteCategoryModal";
 
 import EditCategoryModal from "./editCategoryModal";
 
-export default function CategoryTable({ localCategories }) {
+export default function CategoryTable({ localCategories, setLocalCategories }) {
     //DISPATCH //
     const dispatch = useDispatch();
 
+    //estalo Local//
+    const [refresh, setRefresh] = useState(true);
+
     ////ESTADO GLOBAL/////
     const { allCategories } = useSelector((state) => state);
-    console.log(allCategories);
+    console.log(localCategories);
+    console.log(refresh);
+    ///HOOKS///
+    useEffect(() => {
+        setRefresh(!refresh);
+    }, [allCategories]);
 
     return (
         <div className="table-responsive">

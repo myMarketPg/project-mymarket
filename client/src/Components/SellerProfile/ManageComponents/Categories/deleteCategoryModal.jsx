@@ -7,7 +7,8 @@ export default function DeleteCategoryModal({ category }) {
     const dispatch = useDispatch();
 
     ///ESTADO LOCAL////
-    const [success, setSuccess] = useState();
+    const [success, setSuccess] = useState(false);
+    const [refresh, setRefresh] = useState(true);
 
     /////Event Handler/////
 
@@ -15,6 +16,8 @@ export default function DeleteCategoryModal({ category }) {
         e.preventDefault();
         dispatch(deleteCategory(id));
         dispatch(getAllCategories());
+        setSuccess(true);
+        setRefresh(!refresh);
         // alert("Category Deleted!");
         // dispatch(getAllCategorys());
     }
@@ -28,47 +31,81 @@ export default function DeleteCategoryModal({ category }) {
             aria-hidden="true"
         >
             <div className="modal-dialog">
-                <div className="modal-content">
-                    <div className="modal-header">
-                        <h1
-                            className="modal-title fs-5"
-                            id="deleteCategoryModalLabel"
-                        >
-                            Eliminate Category Confirmation
-                        </h1>
-                        <button
-                            type="button"
-                            className="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                        ></button>
-                    </div>
-                    <div className="modal-body">
-                        <span>ID: {category.id} </span>
-                        <br />
-                        <span>Name: {category.name} </span>
-                        <br />
-                    </div>
+                {!success ? (
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h1
+                                className="modal-title fs-5"
+                                id="deleteCategoryModalLabel"
+                            >
+                                Eliminate Category Confirmation
+                            </h1>
+                            <button
+                                type="button"
+                                className="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div className="modal-body">
+                            <span>ID: {category.id} </span>
+                            <br />
+                            <span>Name: {category.name} </span>
+                            <br />
+                        </div>
 
-                    <div className="modal-footer">
-                        <button
-                            type="button"
-                            className="btn btn-secondary"
-                            data-bs-dismiss="modal"
-                        >
-                            Close
-                        </button>
-                        <button
-                            type="button"
-                            className="btn btn-danger"
-                            onClick={(e) => {
-                                handleDelete(e, category.id);
-                            }}
-                        >
-                            Delete Category
-                        </button>
+                        <div className="modal-footer">
+                            <button
+                                type="button"
+                                className="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                            >
+                                Close
+                            </button>
+                            <button
+                                type="button"
+                                className="btn btn-danger"
+                                onClick={(e) => {
+                                    handleDelete(e, category.id);
+                                }}
+                            >
+                                Delete Category
+                            </button>
+                        </div>
                     </div>
-                </div>
+                ) : (
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h1
+                                className="modal-title fs-5"
+                                id="createCategoryModalLabel"
+                            >
+                                Success!
+                            </h1>
+                            <button
+                                type="button"
+                                className="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                                onClick={(e) => setSuccess(false)}
+                            ></button>
+                        </div>
+                        <div className="modal-body">
+                            <h3>Product Deleted!</h3>
+                            <div></div>
+                            <div className="modal-footer">
+                                <button
+                                    type="button"
+                                    className="btn btn-secondary"
+                                    data-bs-dismiss="modal"
+                                    onClick={(e) => setSuccess(false)}
+                                >
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );

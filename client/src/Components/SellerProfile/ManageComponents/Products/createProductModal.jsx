@@ -35,7 +35,6 @@ export default function CreateProductModal({ localCategories }) {
         );
     }
 
-    console.log(categoryList);
     /// variable///
     const checkMarkGif = checkmark;
     const checkMarkGifInfinito = checkmarkInfinito;
