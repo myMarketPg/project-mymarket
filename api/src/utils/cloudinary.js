@@ -4,8 +4,8 @@ const { CLOUD_NAME, CLOUD_KEY, CLOUD_KEY_SECRET } = process.env;
 
 cloudinary.config({
     cloud_name: CLOUD_NAME,
-    cloud_key: CLOUD_KEY,
-    cloud_key_secret: CLOUD_KEY_SECRET,
+    api_key: CLOUD_KEY,
+    api_secret: CLOUD_KEY_SECRET,
 });
 
 module.exports = cloudinary;
