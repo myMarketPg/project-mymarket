@@ -140,7 +140,7 @@ export const rootReducer = (state = intialState, action) => {
             }
         }
         case TYPES.CLEAR_CART:
-            return intialState
+            return state;
         ///FILTROS///
 
         default:
