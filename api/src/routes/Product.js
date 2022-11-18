@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controllers = require('./controllers/product');
 const { Product, Store } = require('../db')
+const products = require('../data/data');
 
 router.get('/', async (req, res, next) => {
     const products = await controllers.listProducts();
@@ -25,13 +26,13 @@ router.get('/:id', async (req, res) => {
 
 
 router.post('/', async(req, res) => {
-    const { name, image, description,model, brand, price, stock, category } = req.body;
+    const { name, image, description, model, brand, price, stock, category } = req.body;
     if( !name || !image || !description || !price || !stock || !model || !brand) {
-        res.status(400).json({info: 'falta ingresar un dato'})
+        res.status(400).json({info: 'Falta ingresar un dato'})
     }
     try {
-        controllers.postProduct(name, image, description,model, brand, price, stock, category);
-        res.status(200).send('Producto añadido');
+        const message = await controllers.postProduct(name, image, description, model, brand, price, stock, category);
+        res.status(200).send(message);
     } catch (error) {
         res.status(404).send(error.message);
     }
@@ -73,6 +74,16 @@ router.delete('/:id', async (req, res) => {
         }
     } catch(error) {
         res.status(404).send(error.message);
+    }
+});
+
+router.post('/json', async (req, res) => {
+    let { products } = req.body;
+    try {
+        const message = await controllers.postData(products);
+        return res.status(200).send(message);
+    } catch (error) {
+        next();
     }
 });
 

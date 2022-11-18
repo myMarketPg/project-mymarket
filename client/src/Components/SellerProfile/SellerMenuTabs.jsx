@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import SellerManageCategories from "./ManageComponents/SellerManageCategories";
-import SellerManageClients from "./ManageComponents/SellerManageClients";
-import SellerManageContact from "./ManageComponents/SellerManageContact";
-import SellerManageOrders from "./ManageComponents/SellerManageOrders";
+import SellerManageCategories from "./ManageComponents/Categories/SellerManageCategories";
+import SellerManageClients from "./ManageComponents/ClientBuyers/SellerManageClients";
+import SellerManageContact from "./ManageComponents/Contact/SellerManageContact";
+import SellerManageOrders from "./ManageComponents/Orders/SellerManageOrders";
 import SellerManageProducts from "./ManageComponents/Products/SellerManageProducts";
-import SellerManageStore from "./ManageComponents/SellerManageStore";
+import SellerManageStore from "./ManageComponents/Store/SellerManageStore";
 
 export default function SellerMenuTab() {
     const dispatch = useDispatch();

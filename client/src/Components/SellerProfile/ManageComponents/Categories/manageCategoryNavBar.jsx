@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import CreateProductModal from "./createProductModal";
+import CreateCategoryModal from "./createCategoryModal";
 
-export default function ManageProductsNavabar({
-    localCategories,
-    localProduts,
-}) {
+export default function ManageCategoryNavabar() {
     ////ESTADOS LOCALES//////
     const [localOrder, setLocalOrder] = useState();
+    const [localCategories, setLocalCategories] = useState();
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-dark">
@@ -23,43 +21,25 @@ export default function ManageProductsNavabar({
                     </button>
                 </form>
 
-                <label className="text-white">CATEGORIES:</label>
-                <form>
-                    <select
-                        className="form-select"
-                        aria-label="All"
-                        defaultValue="All"
-                    >
-                        <option>All</option>
-                        <option value="1">Calzado</option>
-                        <option value="2">Remeras</option>
-                        <option value="3">Pantalones</option>
-                    </select>
-                </form>
-
                 <label className="text-white">ORDER BY:</label>
                 <form>
                     <select className="form-select d-flex" aria-label="-">
                         <option>Open this select menu</option>
                         <option value="1">A-Z</option>
-                        <option value="2">Z-A</option>
-                        <option value="3">Price Asc</option>
-                        <option value="3">Price Desc</option>
+                        <option value="2">Z-A</option>s
                         <option value="3">Stock Asc</option>
                         <option value="3">Stock Desc</option>
-                        <option value="3">Sales Asc</option>
-                        <option value="3">Sales Desc</option>
                     </select>
                 </form>
                 <button
                     type="button"
                     className="btn btn-success"
                     data-bs-toggle="modal"
-                    data-bs-target="#createProductModal"
+                    data-bs-target="#createCategoryModal"
                 >
-                    Add Product +
+                    Add Category +
                 </button>
-                <CreateProductModal localCategories={localCategories} />
+                <CreateCategoryModal />
             </div>
         </nav>
     );
