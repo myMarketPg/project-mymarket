@@ -9,10 +9,7 @@ const LoginButton = () => {
       type="button"
       class="btn btn-outline-dark"
       onClick={() => loginWithRedirect()}
-    >
-      {" "}
-      Tu cuenta{" "}
-    </button>
+    >Log in</button>
   );
 };
 

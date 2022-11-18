@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { TYPES } from "../../Redux/actions";
+
 
 
 export default function CardProduct(data, addToCart) {
+  
   const { id, name, price, category, image, rating, description } =
     data;
+
     
   return (
     <>

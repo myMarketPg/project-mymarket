@@ -11,7 +11,7 @@ const products = [
     },
     {
         "name": "Taylor 214ce DLX" ,
-        "description": "With a solid Sitka spruce top and layered Indian rosewood back and sides, this Grand Auditorium guitar delivers a rich, nuanced tone profile punctuated by high-end sparkle and midrange punch. The patented Taylor neck and Venetian cutaway provide a comfortable playing experience across a broad range of musical styles, and with an Expression System 2 pickup and preamp highlighting the quality and depth of the guitar’s natural sound, the 214ce DLX is ready to perform in any environment. It’s appointed with white binding, Italian acrylic Small Diamond inlays, and a full-gloss body, and ships in a deluxe hardshell case." ,
+        "description": "With a solid Sitka spruce top and layered Indian rosewood back and sides, this Grand Auditorium guitar delivers a rich, nuanced tone profile punctuated by high-end sparkle and midrange punch. The patented Taylor neck and Venetian cutaway provide a comfortable playing experience across a broad range of musical styles, and with an Expression System 2 pickup and preamp highlighting the quality and depth of the guitar's natural sound, the 214ce DLX is ready to perform in any environment. It's appointed with white binding, Italian acrylic Small Diamond inlays, and a full-gloss body, and ships in a deluxe hardshell case." ,
         "image":"https://www.taylorguitars.com/sites/default/files/responsive-guitar-detail/Taylor-214ce-DLX-RW-fr-2020.png" ,
         "stock": 10,
         "price": 1399,
@@ -21,7 +21,7 @@ const products = [
     },
     {
         "name": "Taylor GS Mini Rosewood" ,
-        "description": "An exciting new entry in our lineup of ultra-popular short-scale guitars, this rosewood edition of the GS Mini brings the beauty and resonance of the all-star acoustic tonewood to a comfortable, easy-to-transport package. With its reduced size and slender, comfortable neck, the GS Mini offers an inviting, intimate playing experience for guitarists of all styles and levels of ability. Thanks to the GS Mini’s bold tone and projection, you’ll have everything you need for practice, jam sessions, and even live performances—it even comes with a durable structured gig bag." ,
+        "description": "An exciting new entry in our lineup of ultra-popular short-scale guitars, this rosewood edition of the GS Mini brings the beauty and resonance of the all-star acoustic tonewood to a comfortable, easy-to-transport package. With its reduced size and slender, comfortable neck, the GS Mini offers an inviting, intimate playing experience for guitarists of all styles and levels of ability. Thanks to the GS Mini's bold tone and projection, you'll have everything you need for practice, jam sessions, and even live performances—it even comes with a durable structured gig bag." ,
         "image":"https://www.taylorguitars.com/sites/default/files/responsive-guitar-detail/Taylor-GSMini-e-RW-frl-2019-1_0.png" ,
         "stock": 10,
         "price": 599,
@@ -131,7 +131,7 @@ const products = [
     },
     {
         "name": "Taylor T5 Classic" ,
-        "description": "Mahogany-top guitars aren’t exclusive to Taylor’s acoustic line. The character-rich hog-top T5 Classic shows off a dark, earthy look that’s underscored by a satin classic mahogany finish and an unbound body. The hollowbody hybrid’s three-pickup configuration features an acoustic body sensor, a concealed neck humbucker, and a visible bridge humbucker, plus five-way switching and onboard tone controls that give players a truly full-range performance guitar. Additional appointments include Small Diamond inlays and nickel hardware. The guitar ships in a Taylor gig bag." ,
+        "description": "Mahogany-top guitars aren't exclusive to Taylor s acoustic line. The character-rich hog-top T5 Classic shows off a dark, earthy look that's underscored by a satin classic mahogany finish and an unbound body. The hollowbody hybrid's three-pickup configuration features an acoustic body sensor, a concealed neck humbucker, and a visible bridge humbucker, plus five-way switching and onboard tone controls that give players a truly full-range performance guitar. Additional appointments include Small Diamond inlays and nickel hardware. The guitar ships in a Taylor gig bag." ,
         "image":"https://www.taylorguitars.com/sites/default/files/styles/multi_column_guitar_light/public/Taylor-T5-Classic-fr-2015.png?itok=3sQQWULV" ,
         "stock": 10,
         "price": 1899,
@@ -141,14 +141,14 @@ const products = [
     },
     {
         "name": "Nord Lead A1" ,
-        "description": "This is the new Nord Lead A1 analog modeling synthesizer – a stunning sounding synthesizer with a simplified yet hugely powerful front panel interface. Producing stand-out sounds for live or for the studio, the Lead A1 is ideal for all musical genres. Thanks to its carefully thought-out user interface, the Lead A1 encourages experimentation, allows for far speedier programming than would otherwise be possible, and ultimately delivers sensational sonic results." ,
+        "description": "This is the new Nord Lead A1 analog modeling synthesizer - a stunning sounding synthesizer with a simplified yet hugely powerful front panel interface. Producing stand-out sounds for live or for the studio, the Lead A1 is ideal for all musical genres. Thanks to it's carefully thought-out user interface, the Lead A1 encourages experimentation, allows for far speedier programming than would otherwise be possible, and ultimately delivers sensational sonic results." ,
         "image":"https://www.nordkeyboards.com/sites/default/files/files/products/nord-lead-a1/images/models-leada1.jpg" ,
         "stock": 10,
         "price": 1800,
         "brand": "Nord",
         "model": "Lead A1",
         "category": "Digital Keyboards"
-    },
+    }
 ]
 
-export default products;
+module.exports = products;
