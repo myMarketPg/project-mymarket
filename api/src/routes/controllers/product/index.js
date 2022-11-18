@@ -25,23 +25,32 @@ module.exports = {
         }
         return allProducts;
     },
-    postProduct: async (name, image, description, model, brand, price, stock, category) => {
-        /* const imageCloud = await cloudinary.uploader.upload(image, {
-            folder: "Products",
-        }); */
+    postProduct: async (req, res, next) => {
+        const {name, image, description, model, brand, price, stock, category} = req.body;
+        try{
+        const result = await cloudinary.uploader.upload(image, {
+            folder: Products,
+        }); 
         const product = await Product.create({
-            name: name,
-            image: image,
-            description: description,
-            model: model,
-            brand: brand,
-            price: price,
-            stock: stock,
+            name,
+            image: {
+                public_id: result.public_id,
+                url: result.secure_url
+            },
+            description,
+            model,
+            brand,
+            price,
+            stock,
+            category
         });
-        await Category.findOrCreate({where: {name: category}});
-        const newCategory = await Category.findAll({where: {name: category}});
-        newCategory.forEach(async (e) => await e.addProduct(product.id));
-        return newCategory;
+        res.status(200).json({
+            succes: true,
+            product
+        })
+    } catch (error) {
+        console.log(error)
+    }
     },
     modifyProduct: async (object) => {
         let product = await Product.findByPk(object.id);
