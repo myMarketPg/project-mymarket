@@ -16,9 +16,12 @@ export default function CategoryTable({ localCategories, setLocalCategories }) {
     console.log(localCategories);
     console.log(refresh);
     ///HOOKS///
+    /*
     useEffect(() => {
         setRefresh(!refresh);
+        console.log("hola");
     }, [allCategories]);
+    */
 
     return (
         <div className="table-responsive">
