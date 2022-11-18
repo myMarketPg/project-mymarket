@@ -14,7 +14,7 @@ function App() {
                 <Route exact path="/" render={() => <Home />} />
                 <Route
                     exact
-                    path="/product/:id"
+                    path="/product"
                     render={() => <ProductDetail />}
                 />
                 <Route exact path="/admin" render={() => <SellerDashboard />} />

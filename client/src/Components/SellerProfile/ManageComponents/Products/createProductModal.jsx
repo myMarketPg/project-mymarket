@@ -6,7 +6,7 @@ import { getAllCategories } from "../../../../Redux/actions";
 import checkmark from "../../../../Images/checkmark.gif";
 import checkmarkInfinito from "../../../../Images/checkmarkInfinito.gif";
 
-export default function CreateProductModal() {
+export default function CreateProductModal({ localCategories }) {
     ///DISPATCH///
     const dispatch = useDispatch();
     ///ESTADOS GLOBALES///
@@ -17,7 +17,7 @@ export default function CreateProductModal() {
     const [postSuccess, setPostSuccess] = useState(false);
 
     /////Creo una lista de categorias en orden ascendente y Creo el componente option list/////
-    let categoryList = allcategories?.map((c) => {
+    let categoryList = localCategories?.map((c) => {
         return c.name;
     });
     categoryList?.sort();
@@ -30,13 +30,15 @@ export default function CreateProductModal() {
             </option>
         );
     }
+
+    console.log(categoryList);
     /// variable///
     const checkMarkGif = checkmark;
     const checkMarkGifInfinito = checkmarkInfinito;
     /////LOCAL REDUCER//////////
     const initialState = {
         name: "",
-        img: "",
+        image: "",
         category: "",
         model: "",
         brand: "",
@@ -66,10 +68,10 @@ export default function CreateProductModal() {
                     brand: action.payload,
                 };
             }
-            case "SET_IMG": {
+            case "SET_IMAGE": {
                 return {
                     ...state,
-                    img: action.payload,
+                    image: action.payload,
                 };
             }
             case "SET_CATEGORY": {
@@ -129,13 +131,13 @@ export default function CreateProductModal() {
             reader.readAsDataURL(file);
             reader.onloadend = () => {
                 setProductForm({
-                    type: "SET_IMG",
+                    type: "SET_IMAGE",
                     payload: reader.result,
                 });
             };
         } else {
             setProductForm({
-                type: "SET_IMG",
+                type: "SET_IMAGE",
                 payload: "",
             });
         }
@@ -165,8 +167,7 @@ export default function CreateProductModal() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        /* postProduct(productForm);
-        setPostSuccess(true);*/
+        dispatch(postProduct(productForm));
         setPostSuccess(true);
         console.log(productForm);
 
@@ -306,16 +307,16 @@ export default function CreateProductModal() {
                                     <input
                                         type="file"
                                         className="form-control"
-                                        file={productForm.img}
-                                        filename={productForm.img}
+                                        file={productForm.image}
+                                        filename={productForm.image}
                                         id="inputGroupFile01"
                                         onChange={handleImage}
                                     />
                                 </div>
                                 <div>
-                                    {productForm.img[0] && (
+                                    {productForm.image[0] && (
                                         <img
-                                            src={productForm.img}
+                                            src={productForm.image}
                                             className="listImg img-thumbnail"
                                         ></img>
                                     )}

@@ -1,0 +1,61 @@
+.demo_area{
+    background: color_invert_fg;
+    border-radius:8px;
+    padding:20px;
+  }
+  
+  .demo_trigger {
+    display: inline-block;
+    width: 30% ;
+  }
+  
+  .detail {
+    position: relative;
+    width: 65%;
+    margin-left: 5%;
+    float: left;
+  }
+  
+  
+  @media (max-width: 610px) {
+  
+    .detail, .demo-trigger {
+      float: none;
+    }
+  
+    .demo-trigger {
+      display:block;
+      width: 50%;
+      max-width:200px;
+      margin: 0 auto;
+    }
+  
+    .detail {
+      margin: 0;
+      width: auto;
+    }
+  
+    p {
+      margin: 0 auto 1em;
+    }
+  
+    .responsive-hint {
+      display: none;
+    }
+    h3 {
+      margin-top:20px;
+    }
+  }
+
+  .stock {
+    text-align: center;
+    width: 250px;
+    margin-bottom: 10;
+    box-shadow: 2px 4px 10px grey;
+  }
+
+.specification {
+    text-align: center;
+    width: 250px;
+    box-shadow: 2px 4px 10px grey;
+}
