@@ -18,7 +18,7 @@ module.exports = {
         if (!id) {
             throw new Error(`Category was not found in the database`);
         }
-        const category = await Category.destroy({where: {id: id}});
-        return `The ${category} was successfully deleted`;
+        await Category.destroy({where: {id: id}});
+        return `The category was successfully deleted`;
     }
 }
