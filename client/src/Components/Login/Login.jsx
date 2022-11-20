@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useAuth } from "../../Context/authContext";
 import { useHistory } from "react-router-dom";
 
-export default function Register() {
+export default function Login() {
   const history = useHistory();
 
   const [user, setUser] = useState({
@@ -12,7 +12,7 @@ export default function Register() {
 
   const [error, setError] = useState("");
 
-  const { signUp } = useAuth();
+  const { login } = useAuth();
 
   const handleChange = ({ target: { name, value } }) => {
     setUser({ ...user, [name]: value });
@@ -22,11 +22,17 @@ export default function Register() {
     e.preventDefault();
     setError("");
     try {
-      await signUp(user.email, user.password);
+      await login(user.email, user.password);
       history.push("/");
     } catch (error) {
       if (error.code === "auth/invalid-email") {
         setError("Correo invalido");
+      }
+      if (error.code === "auth/user-not-found") {
+        setError("El mail no esta registrado");
+      }
+      if (error.code === "auth/wrong-password") {
+        setError("Contrasena incorrecta");
       }
       if (error.code === "auth/internal-error") {
         setError("La contrasena debe tener 7 o mas caracteres");
@@ -37,7 +43,7 @@ export default function Register() {
 
   return (
     <div className="form_box">
-      <h1>Formulario de Login</h1>
+      <h1>Formulario de Registro</h1>
       <h2>Ingresá tus datos</h2>
       {error && <p>{error}</p>}
       <form onSubmit={(e) => handleSubmit(e)}>
@@ -62,7 +68,7 @@ export default function Register() {
           />
         </div>
         <button type="submit" className="btn btn-success">
-          Registrarse
+          Login
         </button>
       </form>
     </div>

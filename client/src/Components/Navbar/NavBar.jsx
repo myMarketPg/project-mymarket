@@ -1,17 +1,20 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import LoginButton from "../Auth/LoginButton";
-import Profile from "../Auth/Profile";
-import LogoutButton from "../Auth/LogoutButton";
-import { useAuth0 } from "@auth0/auth0-react";
+import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { useAuth } from "../../Context/authContext";
 
 export default function NavBar({ localProducts }) {
   ///DISPATCH///
   const dispatch = useDispatch();
+  const history = useHistory();
+  const { user, logOut, loading } = useAuth();
+  console.log(user);
 
-  const { isAuthenticated } = useAuth0();
+  const handleLogOut = async () => {
+    await logOut();
+    history.push("/");
+  };
 
   return (
     <nav className="navbar navbar-expand-lg bg-light">
@@ -52,14 +55,6 @@ export default function NavBar({ localProducts }) {
               </Link>
             </li>
           </ul>
-          {isAuthenticated ? (
-            <>
-              <Profile />
-            </>
-          ) : (
-            <LoginButton />
-          )}
-
           <form className="d-flex" role="search">
             <input
               className="form-control me-2"
