@@ -3,7 +3,6 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('./routes/index.js');
-const auth = require('./routes/auth.js');
 
 require('./db.js');
 
@@ -24,9 +23,8 @@ server.use((req, res, next) => {
 });
 
 server.use('/api', routes);
-server.use('/admin', auth);
 server.get('/', (req, res) => {
-  return res.status(200).json({message: 'Application My Market App'})
+  return res.status(200).json({ message: 'Application My Market App' })
 });
 
 // Error catching endware.
