@@ -1,23 +1,25 @@
-import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
-import LogoutButton from "../Auth/LogoutButton";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useAuth } from "../../Context/authContext";
 
 export default function BuyerProfile() {
-  const { user, isLoading, isAuthenticated } = useAuth0();
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const { user, logOut, loading } = useAuth();
+  console.log(user);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
+  const handleLogOut = async () => {
+    await logOut();
+    history.push("/login");
+  };
+
+  if (loading) {
+    return <p>loading</p>;
   }
   return (
-    isAuthenticated && (
-      <div>
-        <img
-          src={user.picture}
-          alt={user.name}
-          className="rounded-circle img-sm"
-        />
-        <LogoutButton />
-      </div>
-    )
+    <div>
+      <h1>BuyerProfile</h1>
+    </div>
   );
 }
