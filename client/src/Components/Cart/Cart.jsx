@@ -7,8 +7,9 @@ import { useDispatch } from 'react-redux';
 
 
 const Cart = () => {
-  const dispatch = useDispatch();
-
+  
+    const dispatch = useDispatch();
+    const [cart, setCart]= useState((state) => state.cart);
     // const [state, dispatch] = useReducer(rootReducer, initialState);
     // const [allProducts, cart] =  state;
 
@@ -53,3 +54,4 @@ const Cart = () => {
 };
 
 export default Cart;
+

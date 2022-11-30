@@ -2,6 +2,7 @@ const { Router } = require('express');
 // Importación de todos los routers;
 
 const adminMiddleware = require('./Admin');
+const mailMiddleware = require('./Mail');
 const buyerMiddleware = require('./Buyer');
 const categoryMiddleware = require('./Category');
 const orderMiddleware = require('./Order');
@@ -13,6 +14,7 @@ const router = Router();
 
 // Configuración de los routers
 router.use('/admin', adminMiddleware);
+router.use('/send-mail', mailMiddleware);
 router.use('/buyers', buyerMiddleware);
 router.use('/category', categoryMiddleware);
 router.use('/order', orderMiddleware);

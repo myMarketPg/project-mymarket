@@ -10,14 +10,16 @@ export default function ProductTable({ localProducts }) {
 
     return (
         <div className="table-responsive">
-            <table className="table table-hover ">
+            <table className="table table-hover  ">
                 <thead className="table-dark">
                     <tr>
                         <th scope="col">#id</th>
                         <th scope="col">Name</th>
                         <th scope="col"></th>
                         <th scope="col">Category</th>
-                        <th scope="col">Model</th>
+                        <th scope="col" className="align-middle">
+                            Model
+                        </th>
                         <th scope="col">Brand</th>
                         <th scope="col">Price</th>
                         <th scope="col">Stock</th>
@@ -30,7 +32,9 @@ export default function ProductTable({ localProducts }) {
                     {localProducts?.map((product) => {
                         return (
                             <tr key={product.id}>
-                                <td className="align-middle">{product.id}</td>
+                                <td className="align-middle" scope="row">
+                                    <span className="fs-6">{product.id}</span>
+                                </td>
                                 <td className="align-middle">
                                     {" "}
                                     <button
@@ -44,8 +48,8 @@ export default function ProductTable({ localProducts }) {
                                 </td>
                                 <td className="align-middle">
                                     <img
-                                        src={product.img}
-                                        className="listImg img-thumbnail"
+                                        src={product.image}
+                                        className="listImg img-thumbnail "
                                     />
                                 </td>
                                 <td className="align-middle ">

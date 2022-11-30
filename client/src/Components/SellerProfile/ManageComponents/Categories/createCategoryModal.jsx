@@ -6,7 +6,7 @@ import { getAllCategories, postCategory } from "../../../../Redux/actions";
 import checkmark from "../../../../Images/checkmark.gif";
 import checkmarkInfinito from "../../../../Images/checkmarkInfinito.gif";
 
-export default function CreateCategoryModal() {
+export default function CreateCategoryModal({ setLocalCategories }) {
     ///DISPATCH///
     const dispatch = useDispatch();
     ///ESTADOS GLOBALES///
@@ -15,6 +15,7 @@ export default function CreateCategoryModal() {
     const [disabledSubmit, setDisabledSubmit] = useState(true);
     const [checkActive, setCheckActive] = useState([]);
     const [postSuccess, setPostSuccess] = useState(false);
+    const { allCategories } = useSelector((state) => state);
 
     /// VARIABLE GIF///
     const checkMarkGif = checkmark;
@@ -53,8 +54,10 @@ export default function CreateCategoryModal() {
     function handleSubmit(e) {
         e.preventDefault();
         dispatch(postCategory(categoryForm));
-        setPostSuccess(true);
         dispatch(getAllCategories());
+
+        setPostSuccess(true);
+
         console.log(categoryForm);
 
         setCategoryForm({ type: "SUBMIT" });
