@@ -12,7 +12,7 @@ const products = [
     {
         "name": "Taylor 214ce DLX" ,
         "description": "With a solid Sitka spruce top and layered Indian rosewood back and sides, this Grand Auditorium guitar delivers a rich, nuanced tone profile punctuated by high-end sparkle and midrange punch. The patented Taylor neck and Venetian cutaway provide a comfortable playing experience across a broad range of musical styles, and with an Expression System 2 pickup and preamp highlighting the quality and depth of the guitar's natural sound, the 214ce DLX is ready to perform in any environment. It's appointed with white binding, Italian acrylic Small Diamond inlays, and a full-gloss body, and ships in a deluxe hardshell case." ,
-        "image":"https://www.taylorguitars.com/sites/default/files/responsive-guitar-detail/Taylor-214ce-DLX-RW-fr-2020.png" ,
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLTELZHGDarLBhbBq_gtXhMwI69nkjQiB_fA&usqp=CAU" ,
         "stock": 10,
         "price": 1399,
         "brand": "Taylor",
