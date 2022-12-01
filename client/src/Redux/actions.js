@@ -36,7 +36,7 @@ export const updateStore = (payload) => {
 export const getAllProducts = () => {
     return async function (dispatch) {
         try {
-            const data = await axios.get("http://localhost:3001/api/products");
+            const data = await axios.get("https://mymarket-api-production.up.railway.app/api/products");
             dispatch({
                 type: "GET_ALL_PRODUCTS",
                 payload: data.data.products,
@@ -239,7 +239,7 @@ export const updateAdmin = (payload) => {
 export const getAllCategories = () => {
     return async function (dispatch) {
         try {
-            const data = await axios.get("http://localhost:3001/api/category");
+            const data = await axios.get("https://mymarket-api-production.up.railway.app/api/category");
             dispatch({
                 type: "GET_ALL_CATEGORIES",
                 payload: data.data.categories,

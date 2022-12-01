@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getAllProducts } from "../../Redux/actions.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import NavBar from "../Navbar/NavBar.jsx";
 import CardProduct from "../CardProduct/CardProduct.jsx";
 import Filtros from "./Filtros";
@@ -17,7 +17,7 @@ export default function Home() {
   console.log(user);
 
   ///ESTADOS GLOBALES///
-  //   const { allProducts } = useSelector((state) => state);
+  const { allProducts } = useSelector((state) => state);
 
   /// ESTADOS LOCAL ///
 
@@ -73,7 +73,7 @@ export default function Home() {
       addToCart: 1,
     },
     {
-      id: 1,
+      id: 5,
       name: "Remera Blanca Lisa",
       price: 1200,
       category: "Remera",
@@ -100,15 +100,14 @@ export default function Home() {
     <div>
       <NavBar localProducts={localProducts} />
       <div className="Home_container">
-        <div className="row_container">
-          r
+        <div className="row_container">          
           <div className="row">
             <Carrusel />
             <Filtros localProducts={localProducts} />
             <div className="products-container">
               <div className="container text-center">
                 <div className="row">
-                  {localProducts?.map((product) => {
+                  {allProducts?.map((product) => {
                     return (
                       <div className="col" key={product.id}>
                         <CardProduct
